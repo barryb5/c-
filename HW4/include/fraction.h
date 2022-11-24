@@ -17,27 +17,29 @@
 using namespace std;
 
 class Fraction {
-    public:
-        Fraction(int, int);
-        Fraction();
-        Fraction(const Fraction&);
+public:
+    Fraction();
+    Fraction(const Fraction&);
+    Fraction(int, int);
 
-        // ~Fraction();
+    ~Fraction();
 
-        // Member Functions
-        int const getNum(void) const;
-        void setNum(int);
+    // Member Functions
+    int const getNum(void) const;
+    void setNum(int);
 
-        int const getDenom(void) const;    
-        void setDenom(int);
+    int const getDenom(void) const;    
+    void setDenom(int);
 
-        void print(void) const;
+    void print(void) const;
 
-        int isPalindrome(void) const;
-        void displayCommonPalindromeDigit(void) const;
-    private:
-        int num;
-        int denom;
+    bool isPalindrome(void) const;
+    void displayCommonPalindromeDigit(void) const;
+private:
+    int num;
+    int denom;
+
+    bool isPalindromeHelper(const std::string& str) const;
 };
 
 // Function Prototypes
