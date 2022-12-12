@@ -3,7 +3,7 @@
  * Discussion:      Homework 4 Exercise #1
  * Written By:      Barry Balasingham
  * Email:           bbalasingham@gmail.com
- * Submitted Date:  2022/11/__
+ * Submitted Date:  2022/12/11
  * Graded By:       
  * Grader's Email:  
  * Return Date:     
@@ -12,13 +12,8 @@
 // Header/Include Files
 #include <iostream>
 #include "include/fraction.h"
+#include "include/utility.h"
 using namespace std;
-
-// Function Prototypes
-void displayCodingStatementBarryBalasingham(void);
-void displayClassInfoHw4BarryBalasingham(void);
-void runMenuHw3BarryBalasingham(void);
-Fraction* runMenuInit(void);
 
 // Application Driver
 int main() {
@@ -26,147 +21,378 @@ int main() {
 
     displayClassInfoHw4BarryBalasingham();
     
-    runMenuHw3BarryBalasingham();
-    
+    runMenuHw4();
 }
 
-// Function Definitions
-void displayCodingStatementBarryBalasingham() {
-    cout << "We write code to manipulate data, which are provided by the"
-        "\nuser, to produce the required outcome in the most efficient way!"
+/**
+ * PROGRAM_OUTPUT
+We write code to manipulate data, which are provided by the
+user, to produce the required outcome in the most efficient way!
 
-        "\n\nCIS 25 - C++ Programming"
-        "\nLaney College"
-        "\nBarry Balasingham" << endl;
-}
+CIS 25 - C++ Programming
+Laney College
+Barry Balasingham
 
-void displayClassInfoHw4BarryBalasingham() {
-    cout << "\nInformation --"
-        "\n  Assignment:                   HW #4 Exercise #1"
-        "\n  Implemented by:               Barry Balasingham"
-        "\n  Required Submission Date:     2022/10/__"
-        "\n  Actual Submission Date:       2022/10/__"
-        "\n" << endl;
-}
+Information --
+  Assignment:                   HW #4 Exercise #1
+  Implemented by:               Barry Balasingham
+  Required Submission Date:     2022/10/11
+  Actual Submission Date:       2022/10/11
 
-void runMenuHw3BarryBalasingham() {
-    Fraction* ptrFraction = nullptr;
-    bool run = true;
-    do {
-        cout << 
-            "\n****************************************************"
-            "\n*                    MENU - HW #4                  *"
-            "\n*  1. Setting Up Fraction                          *"
-            "\n*  2. isPalindromeBarryBalasingham()               *"
-            "\n*  3. Using displayCommonPalindromeDigitBarryBalasingham()*"
-            "\n*  4. Printing Current Fraction                    *"
-            "\n*  5. Quit                                         *"
-            "\n****************************************************"
-            "\nSelect an option (use integer value only): "
-            << flush;
 
-        int input;
-        cin >> input;
+****************************************************
+*                    MENU - HW #4                  *
+*  1. Setting Up Fraction                          *
+*  2. isPalindromeBarryBalasingham()               *
+*  3. Using displayCommonPalindromeDigitBarryBalasingham()*
+*  4. Printing Current Fraction                    *
+*  5. Quit                                         *
+****************************************************
+Select an option (use integer value only): 6
 
-        if (input == 1) {
+      WRONG OPTION!
 
-            if (nullptr != ptrFraction)
-                delete ptrFraction;
+****************************************************
+*                    MENU - HW #4                  *
+*  1. Setting Up Fraction                          *
+*  2. isPalindromeBarryBalasingham()               *
+*  3. Using displayCommonPalindromeDigitBarryBalasingham()*
+*  4. Printing Current Fraction                    *
+*  5. Quit                                         *
+****************************************************
+Select an option (use integer value only): 2
 
-            ptrFraction = runMenuInit();
-        } else if (input == 2) {
-            cout << "\n  Palindrome Option -\n";
-            
-            if (ptrFraction->isPalindrome()) {
-                cout << "\n    The current Fraction is a Palindrome!";
-            } else {
-                cout << "\n    The current Fraction is not a Palindrome!";
-            }
-        } else if (input == 3) {
-            
-        } else if (input == 4) {
-            ptrFraction->print();
-        } else if (input == 5) {
-            cout <<
-                "\n  Having fun ...!"
-            << endl;
-            delete ptrFraction;
-            run = false;
-        } else {
-            cout << "\n      WRONG OPTION!" << endl;
-        }
-        cout << flush;
-    } while (run);   
-}
+  Palindrome Option -
 
-Fraction* runMenuInit() {
-    bool run = true;
-    Fraction* f1 = nullptr;
-    do {
-        cout <<
-            "\n  INITIALIZING Option -"
-            "\n    Calling runMenuInit()!"
-            "\n\n    **************************"
-            "\n    * SubMENU - INITIALIZING *"
-            "\n    *  1. Creating           *"
-            "\n    *  2. Updating           *"
-            "\n    *  3. Returning          *"
-            "\n    **************************"\
-            "\n    Select an option (integer only): ";
-        
-        int input;
-        cin >> input;
+    The current Fraction is not a Palindrome!
 
-        if (input == 1) {
-            cout << 
-                "\n\n      Creating 1 NEW Fraction object --"
-                "\n        Calling create()!"
-                "\n          Enter num: ";
-            
-            int num;
-            cin >> num;
+****************************************************
+*                    MENU - HW #4                  *
+*  1. Setting Up Fraction                          *
+*  2. isPalindromeBarryBalasingham()               *
+*  3. Using displayCommonPalindromeDigitBarryBalasingham()*
+*  4. Printing Current Fraction                    *
+*  5. Quit                                         *
+****************************************************
+Select an option (use integer value only): 1
 
-            cout <<
-                "\n          Enter denom: ";
-            
-            int denom;
-            cin >> denom;
-            f1 = new Fraction(num, denom);
+  INITIALIZING Option -
+    Calling runMenuInit()!
 
-        } else if (input == 2) {
-            if (f1 != nullptr) {
-                cout << 
-                    "\n\n      Creating 1 NEW Fraction object --"
-                    "\n        Calling update()!"
-                    "\n          Enter num: ";
-                
-                int num;
-                cin >> num;
+    **************************
+    * SubMENU - INITIALIZING *
+    *  1. Creating           *
+    *  2. Updating           *
+    *  3. Returning          *
+    **************************
+    Select an option (integer only): 2
 
-                cout <<
-                    "\n          Enter denom: ";
-                
-                int denom;
-                cin >> denom;
+      Not a proper option as there is no Fraction!
 
-                f1->setNum(num);
-                f1->setDenom(denom);
-            } else {
-                cout <<
-                    "\n      Not a proper option as there is no Fraction!\n";
-            }
-        } else if (input == 3) {
-            cout <<
-                "\n      Returning to previous menu!\n";
-            run = false;
-            return f1;
-        } else {
-            cout <<
-                "\n      WRONG OPTION!\n";
-        }
+    **************************
+    * SubMENU - INITIALIZING *
+    *  1. Creating           *
+    *  2. Updating           *
+    *  3. Returning          *
+    **************************
+    Select an option (integer only): 5
 
-        cout << flush;
-    } while (run);
+      WRONG OPTION!
 
-    return nullptr;    
-}
+    **************************
+    * SubMENU - INITIALIZING *
+    *  1. Creating           *
+    *  2. Updating           *
+    *  3. Returning          *
+    **************************
+    Select an option (integer only): 1
+
+
+      Creating 1 NEW Fraction object --
+        Calling create()!
+          Enter num: 5
+
+          Enter denom: -959
+
+
+       One Fraction has just been created/built!
+    **************************
+    * SubMENU - INITIALIZING *
+    *  1. Creating           *
+    *  2. Updating           *
+    *  3. Returning          *
+    **************************
+    Select an option (integer only): 1
+
+      Please update or return!
+
+    **************************
+    * SubMENU - INITIALIZING *
+    *  1. Creating           *
+    *  2. Updating           *
+    *  3. Returning          *
+    **************************
+    Select an option (integer only): 3
+
+      Returning to previous menu!
+
+****************************************************
+*                    MENU - HW #4                  *
+*  1. Setting Up Fraction                          *
+*  2. isPalindromeBarryBalasingham()               *
+*  3. Using displayCommonPalindromeDigitBarryBalasingham()*
+*  4. Printing Current Fraction                    *
+*  5. Quit                                         *
+****************************************************
+Select an option (use integer value only): 4
+
+  PRINTING Option -- 
+    Address : 0x55cafab106d0
+      num : 5
+      denom : -959
+
+****************************************************
+*                    MENU - HW #4                  *
+*  1. Setting Up Fraction                          *
+*  2. isPalindromeBarryBalasingham()               *
+*  3. Using displayCommonPalindromeDigitBarryBalasingham()*
+*  4. Printing Current Fraction                    *
+*  5. Quit                                         *
+****************************************************
+Select an option (use integer value only): 2
+
+  Palindrome Option -
+
+    The current Fraction is a Palindrome!
+
+****************************************************
+*                    MENU - HW #4                  *
+*  1. Setting Up Fraction                          *
+*  2. isPalindromeBarryBalasingham()               *
+*  3. Using displayCommonPalindromeDigitBarryBalasingham()*
+*  4. Printing Current Fraction                    *
+*  5. Quit                                         *
+****************************************************
+Select an option (use integer value only): 3
+
+  displayCommonPalindromeDigit() Option -
+    There is/are 1 common digit(s) of
+      5
+
+****************************************************
+*                    MENU - HW #4                  *
+*  1. Setting Up Fraction                          *
+*  2. isPalindromeBarryBalasingham()               *
+*  3. Using displayCommonPalindromeDigitBarryBalasingham()*
+*  4. Printing Current Fraction                    *
+*  5. Quit                                         *
+****************************************************
+Select an option (use integer value only): 1
+
+  INITIALIZING Option -
+    Calling runMenuInit()!
+
+    **************************
+    * SubMENU - INITIALIZING *
+    *  1. Creating           *
+    *  2. Updating           *
+    *  3. Returning          *
+    **************************
+    Select an option (integer only): 1
+
+      Please update or return!
+
+    **************************
+    * SubMENU - INITIALIZING *
+    *  1. Creating           *
+    *  2. Updating           *
+    *  3. Returning          *
+    **************************
+    Select an option (integer only): 2
+
+
+      Creating 1 NEW Fraction object --
+        Calling update()!
+          Enter num: 156810000
+
+          Enter denom: 49914173
+
+    **************************
+    * SubMENU - INITIALIZING *
+    *  1. Creating           *
+    *  2. Updating           *
+    *  3. Returning          *
+    **************************
+    Select an option (integer only): 3
+
+      Returning to previous menu!
+
+****************************************************
+*                    MENU - HW #4                  *
+*  1. Setting Up Fraction                          *
+*  2. isPalindromeBarryBalasingham()               *
+*  3. Using displayCommonPalindromeDigitBarryBalasingham()*
+*  4. Printing Current Fraction                    *
+*  5. Quit                                         *
+****************************************************
+Select an option (use integer value only): 4
+
+  PRINTING Option -- 
+    Address : 0x55cafab106d0
+      num : 156810000
+      denom : 49914173
+
+****************************************************
+*                    MENU - HW #4                  *
+*  1. Setting Up Fraction                          *
+*  2. isPalindromeBarryBalasingham()               *
+*  3. Using displayCommonPalindromeDigitBarryBalasingham()*
+*  4. Printing Current Fraction                    *
+*  5. Quit                                         *
+****************************************************
+Select an option (use integer value only): 2
+
+  Palindrome Option -
+
+    The current Fraction is not a Palindrome!
+
+****************************************************
+*                    MENU - HW #4                  *
+*  1. Setting Up Fraction                          *
+*  2. isPalindromeBarryBalasingham()               *
+*  3. Using displayCommonPalindromeDigitBarryBalasingham()*
+*  4. Printing Current Fraction                    *
+*  5. Quit                                         *
+****************************************************
+Select an option (use integer value only): 3
+
+  displayCommonPalindromeDigit() Option -
+    The current Fraction is not a Palindrome!
+
+****************************************************
+*                    MENU - HW #4                  *
+*  1. Setting Up Fraction                          *
+*  2. isPalindromeBarryBalasingham()               *
+*  3. Using displayCommonPalindromeDigitBarryBalasingham()*
+*  4. Printing Current Fraction                    *
+*  5. Quit                                         *
+****************************************************
+Select an option (use integer value only): 1
+
+  INITIALIZING Option -
+    Calling runMenuInit()!
+
+    **************************
+    * SubMENU - INITIALIZING *
+    *  1. Creating           *
+    *  2. Updating           *
+    *  3. Returning          *
+    **************************
+    Select an option (integer only): 1
+
+      Please update or return!
+
+    **************************
+    * SubMENU - INITIALIZING *
+    *  1. Creating           *
+    *  2. Updating           *
+    *  3. Returning          *
+    **************************
+    Select an option (integer only): 2
+
+      Creating 1 NEW Fraction object --
+        Calling update()!
+          Enter num: 1551
+
+          Enter denom: 5491945
+
+    **************************
+    * SubMENU - INITIALIZING *
+    *  1. Creating           *
+    *  2. Updating           *
+    *  3. Returning          *
+    **************************
+    Select an option (integer only): 3
+
+      Returning to previous menu!
+
+****************************************************
+*                    MENU - HW #4                  *
+*  1. Setting Up Fraction                          *
+*  2. isPalindromeBarryBalasingham()               *
+*  3. Using displayCommonPalindromeDigitBarryBalasingham()*
+*  4. Printing Current Fraction                    *
+*  5. Quit                                         *
+****************************************************
+Select an option (use integer value only): 4
+
+  PRINTING Option -- 
+    Address : 0x55cafab106d0
+      num : 1551
+      denom : 5491945
+
+****************************************************
+*                    MENU - HW #4                  *
+*  1. Setting Up Fraction                          *
+*  2. isPalindromeBarryBalasingham()               *
+*  3. Using displayCommonPalindromeDigitBarryBalasingham()*
+*  4. Printing Current Fraction                    *
+*  5. Quit                                         *
+****************************************************
+Select an option (use integer value only): 2
+
+  Palindrome Option -
+
+    The current Fraction is a Palindrome!
+
+****************************************************
+*                    MENU - HW #4                  *
+*  1. Setting Up Fraction                          *
+*  2. isPalindromeBarryBalasingham()               *
+*  3. Using displayCommonPalindromeDigitBarryBalasingham()*
+*  4. Printing Current Fraction                    *
+*  5. Quit                                         *
+****************************************************
+Select an option (use integer value only): 3
+
+  displayCommonPalindromeDigit() Option -
+    There is/are 2 common digit(s) of
+      1
+      5
+
+****************************************************
+*                    MENU - HW #4                  *
+*  1. Setting Up Fraction                          *
+*  2. isPalindromeBarryBalasingham()               *
+*  3. Using displayCommonPalindromeDigitBarryBalasingham()*
+*  4. Printing Current Fraction                    *
+*  5. Quit                                         *
+****************************************************
+Select an option (use integer value only): 55
+
+      WRONG OPTION!
+
+****************************************************
+*                    MENU - HW #4                  *
+*  1. Setting Up Fraction                          *
+*  2. isPalindromeBarryBalasingham()               *
+*  3. Using displayCommonPalindromeDigitBarryBalasingham()*
+*  4. Printing Current Fraction                    *
+*  5. Quit                                         *
+****************************************************
+Select an option (use integer value only): 5
+
+  The Fraction at
+    Address : 0x55cafab106d0
+      num : 1551
+      denom : 5491945
+
+  is now removed!
+
+  Having fun ...!
+ */
+
+/** 
+ * Logic_Code_Output_Issues
+ * No Comments!
+ */

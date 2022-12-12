@@ -4,7 +4,7 @@
  *                   Fraction
  * Written By:     Barry Balasingham
  * Email:          bbalasingham@gmail.com
- * Submitted Date: 2022/11/__
+ * Submitted Date: 2022/12/__
  * Grader Email:
  * Return Date:
  */
@@ -34,12 +34,14 @@ public:
     void print(void) const;
 
     bool isPalindrome(void) const;
-    void displayCommonPalindromeDigit(void) const;
+    void displayCommonPalindromeDigitBarryBalasingham(void) const;
+    int gcd(int, int) const;
 private:
     int num;
     int denom;
 
     bool isPalindromeHelper(const std::string& str) const;
+    int displayCommonPalindromeDigitHelperBarryBalasingham(void) const;
 };
 
 // Function Prototypes

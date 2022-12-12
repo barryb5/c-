@@ -14,25 +14,21 @@ using namespace std;
 Fraction::Fraction() {
     num = 0;
     denom = 0;
-    cout << "----------Default Constructor " << this->num <<  "/" << this->denom << endl;
 }
 
 Fraction::Fraction(const Fraction& f) 
 : num(f.num)
 , denom(f.denom) {
-    cout << "--------Copy Constructor " << this->num <<  "/" << this->denom << endl;
 }
 
 
 Fraction::Fraction(int n, int d)
-: num(n)
-, denom(d) {
-
-    cout << "---------Param Constructor " << this->num <<  "/" << this->denom << endl;
+: num(n/gcd(n, d))
+, denom(d/gcd(n, d)) {
 }
 
 Fraction::~Fraction() {
-    cout << "---------Destuctor " << this->num <<  "/" << this->denom << endl;
+
 }
 
 
@@ -41,7 +37,7 @@ int const Fraction::getNum() const {
 }
 
 void Fraction::setNum(int n) {
-    num = n;
+    num = n/gcd(n, denom);
 }
 
 int const Fraction::getDenom() const {
@@ -49,13 +45,12 @@ int const Fraction::getDenom() const {
 }
 
 void Fraction::setDenom(int d) {
-    denom = d;
+    denom = d/gcd(num, d);
 }
 
 
 bool Fraction::isPalindromeHelper(const std::string& str) const {
 
-    cout << "----" << str << endl;
     const char* numArr = str.c_str();
     size_t sz = str.length();
 
@@ -71,13 +66,15 @@ bool Fraction::isPalindromeHelper(const std::string& str) const {
 
 
 bool Fraction::isPalindrome() const {
+    int tempN = (num > 0) ? num : -1*num;
+    int tempD = (denom > 0) ? denom : -1*denom;
 
     if (denom == 0) {
         return false;
     }
 
-    if ( isPalindromeHelper(std::to_string(num)) 
-        && isPalindromeHelper(std::to_string(denom)))
+    if ( isPalindromeHelper(std::to_string(tempN)) 
+        && isPalindromeHelper(std::to_string(tempD)))
         return true;
     return false;
 }        
@@ -85,7 +82,6 @@ bool Fraction::isPalindrome() const {
 
 void Fraction::print() const {
     cout << 
-        "\n  PRINTING Option -- "
         "\n    Address : "
         << this
         << "\n      num : "
@@ -93,4 +89,69 @@ void Fraction::print() const {
         << "\n      denom : "
         << denom
         << endl;
+}
+
+int Fraction::gcd(int n, int d) const {
+    int gcd{ 1 };
+
+    n = (n < 0) ? -n : n;
+    d = (d < 0) ? -d : d;
+
+    for (size_t i{ 2 }; i <= n && i <= d; ++i) {
+        if (n % i == 0 && d % i == 0) {
+            gcd = i;
+        }
+    }
+
+    return gcd;
+}
+
+void Fraction::displayCommonPalindromeDigitBarryBalasingham() const {
+    int tempN = (num > 0) ? num : -1*num;
+    int tempD = (denom > 0) ? denom : -1*denom;
+    int digitN[10] { 0 };
+    int digitD[10] { 0 };
+    int common[10] { 0 };
+    int totalSimilar { 0 };
+
+    cout << "\n  displayCommonPalindromeDigit() Option -";
+
+    if (isPalindrome()) {        
+        while (tempN > 0) {
+            digitN[tempN % 10]++;
+
+            tempN = tempN / 10;
+        }
+        while (tempD > 0) {
+            digitD[tempD % 10]++;
+
+            tempD = tempD / 10;
+        }
+
+        for (size_t i = 0; i < 10; ++i) {
+            if (digitN[i] > 0 && digitD[i] > 0) {
+                common[i]++;
+                totalSimilar++;
+            }
+        }
+
+        cout <<
+            "\n    There is/are "
+            << totalSimilar
+            << " common digit(s) of";
+        
+        for (size_t i = 0; i < 10; i++) {
+            if (common[i] > 0) {
+                
+                cout << 
+                    "\n      "
+                    << i;
+            }
+        }
+        cout << endl;
+    } else {
+        cout << "\n    The current Fraction is not a Palindrome!" << endl;
+    }
+
+    return;
 }

@@ -47,4 +47,5 @@ add_executable (HW3
 add_executable (HW4 
     HW4/cis25Fall2022BarryBalasinghamHw4.cpp
     HW4/source/fraction.cpp
+    HW4/source/utility.cpp
     )
