@@ -11,8 +11,8 @@
 
 // Header/Include Files
 #include <iostream>
-#include "include/fraction.h"
-#include "include/utility.h"
+#include "fraction.h"
+#include "utility.h"
 using namespace std;
 
 // Application Driver

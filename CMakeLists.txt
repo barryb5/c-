@@ -49,3 +49,10 @@ add_executable (HW4
     HW4/source/fraction.cpp
     HW4/source/utility.cpp
     )
+
+add_executable (Final1
+    Final1/cis25Fall2022BarryBalasinghamFinalA.cpp
+    Final1/finalExamUtilityBarryBalasingham.cpp
+    Final1/fractionBarryBalasingham.cpp
+    Final1/fractionUtilityBarryBalasingham.cpp
+    )

@@ -2,13 +2,13 @@
  * Program Name:   utility.cpp
  * Discussion:     Application with Fraction
  * Written By:     Barry Balasingham 
- * Date:           2022/12/__
+ * Date:           2022/12/11
  */
 
 // Hear/Include Files
-#include <iostream> 
-#include "../include/fraction.h"
-#include "../include/utility.h"
+#include <iostream>
+#include "fraction.h"
+#include "utility.h"
 using namespace std;
 
 // Function Definitions
@@ -18,7 +18,7 @@ void runMenuHw4() {
     Fraction* ptrFraction{ nullptr };
 
     do {
-        cout << 
+        cout <<
             "\n****************************************************"
             "\n*                    MENU - HW #4                  *"
             "\n*  1. Setting Up Fraction                          *"
@@ -67,7 +67,7 @@ void runMenuHw4() {
 
                 if (nullptr != ptrFraction)
                     delete ptrFraction;
-                
+
                 cout << "\n  is now removed!";
 
                 cout <<
@@ -94,24 +94,24 @@ void initSubMenu(Fraction*& refPtrFraction) {
             "\n    *  3. Returning          *"
             "\n    **************************"\
             "\n    Select an option (integer only): ";
-        
+
         int input;
         cin >> input;
 
         switch (input) {
             case 1:
                 if (nullptr == refPtrFraction) {
-                    cout << 
+                    cout <<
                         "\n\n      Creating 1 NEW Fraction object --"
                         "\n        Calling create()!"
                         "\n          Enter num: ";
-                    
+
                     int num;
                     cin >> num;
 
                     cout <<
                         "\n          Enter denom: ";
-                    
+
                     int denom;
                     cin >> denom;
                     refPtrFraction = new Fraction(num, denom);
@@ -119,24 +119,24 @@ void initSubMenu(Fraction*& refPtrFraction) {
                     cout <<
                         "\n\n       One Fraction has just been created/built!";
                 } else {
-                    cout << 
+                    cout <<
                         "\n      Please update or return!\n";
                 }
 
                 break;
             case 2:
                 if (refPtrFraction != nullptr) {
-                    cout << 
+                    cout <<
                         "\n      Creating 1 NEW Fraction object --"
                         "\n        Calling update()!"
                         "\n          Enter num: ";
-                    
+
                     int num;
                     cin >> num;
 
                     cout <<
                         "\n          Enter denom: ";
-                    
+
                     int denom;
                     cin >> denom;
 

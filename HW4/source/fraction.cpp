@@ -5,8 +5,8 @@
  * Date:           2022/10/27
  */
 // Hear/Include Files
-#include <iostream> 
-#include "../include/fraction.h"
+#include <iostream>
+#include "fraction.h"
 using namespace std;
 
 // Function Definitions
@@ -16,7 +16,7 @@ Fraction::Fraction() {
     denom = 0;
 }
 
-Fraction::Fraction(const Fraction& f) 
+Fraction::Fraction(const Fraction& f)
 : num(f.num)
 , denom(f.denom) {
 }
@@ -28,7 +28,6 @@ Fraction::Fraction(int n, int d)
 }
 
 Fraction::~Fraction() {
-
 }
 
 
@@ -50,7 +49,6 @@ void Fraction::setDenom(int d) {
 
 
 bool Fraction::isPalindromeHelper(const std::string& str) const {
-
     const char* numArr = str.c_str();
     size_t sz = str.length();
 
@@ -58,7 +56,7 @@ bool Fraction::isPalindromeHelper(const std::string& str) const {
     while (i < sz/2) {
         if (numArr[i] == numArr[sz-1-i])
             ++i;
-        else 
+        else
             return false;
     }
     return true;
@@ -73,15 +71,15 @@ bool Fraction::isPalindrome() const {
         return false;
     }
 
-    if ( isPalindromeHelper(std::to_string(tempN)) 
+    if ( isPalindromeHelper(std::to_string(tempN))
         && isPalindromeHelper(std::to_string(tempD)))
         return true;
     return false;
-}        
+}
 
 
 void Fraction::print() const {
-    cout << 
+    cout <<
         "\n    Address : "
         << this
         << "\n      num : "
@@ -116,7 +114,7 @@ void Fraction::displayCommonPalindromeDigitBarryBalasingham() const {
 
     cout << "\n  displayCommonPalindromeDigit() Option -";
 
-    if (isPalindrome()) {        
+    if (isPalindrome()) {
         while (tempN > 0) {
             digitN[tempN % 10]++;
 
@@ -139,11 +137,10 @@ void Fraction::displayCommonPalindromeDigitBarryBalasingham() const {
             "\n    There is/are "
             << totalSimilar
             << " common digit(s) of";
-        
+
         for (size_t i = 0; i < 10; i++) {
             if (common[i] > 0) {
-                
-                cout << 
+                cout <<
                     "\n      "
                     << i;
             }

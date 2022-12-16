@@ -4,7 +4,7 @@
  *                   Fraction
  * Written By:     Barry Balasingham
  * Email:          bbalasingham@gmail.com
- * Submitted Date: 2022/12/__
+ * Submitted Date: 2022/12/11
  * Grader Email:
  * Return Date:
  */
@@ -36,6 +36,7 @@ public:
     bool isPalindrome(void) const;
     void displayCommonPalindromeDigitBarryBalasingham(void) const;
     int gcd(int, int) const;
+
 private:
     int num;
     int denom;
@@ -46,6 +47,6 @@ private:
 
 // Function Prototypes
 
-void printFraction(Fraction);
+void printFraction(const Fraction&);
 
 #endif
