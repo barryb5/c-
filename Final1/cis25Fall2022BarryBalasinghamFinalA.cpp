@@ -218,8 +218,8 @@ Select an option (use integer value only): 3
 
     There is/are 1 uncommon even digit(s).
 
-    The Uncommon even digit of
-      0 is found in the Numerator of num
+    The uncommon even digit of
+      0 is found in the Denominator of denom
 
 ****************************************
 *            MENU - Final Exam A       *
@@ -344,11 +344,11 @@ Select an option (use integer value only): 3
 
     The Fraction at 0x5557cc9766d0 is a Palindrome.
 
-    There is/are 3 uncommon even digit(s).
+    There is/are 2 uncommon even digit(s).
 
-    The Uncommon even digit of
-      0 is found in the Numerator of num
-      2 is found in the Denominator of denom
+    The uncommon even digit of
+      0 is found in the Denominator of denom
+      2 is found in the Numerator of num
 
 ****************************************
 *            MENU - Final Exam A       *

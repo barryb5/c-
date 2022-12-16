@@ -137,37 +137,42 @@ void displayPalindromeInfoBB(const FractionBarryBalasingham* frPtrBB) {
             << " is a Palindrome."
             << "\n\n    There is/are ";
 
-        while (tempNum > 0) {
+        do {
             if ((tempNum % 10) % 2 == 0) {
                 numEvens[tempNum % 10]++;
-                total++;
+                if (numEvens[tempNum % 10] == 1) {
+                    total++;
+                }
             }
             tempNum = tempNum / 10;
         }
+        while (tempNum > 0);
 
         while (tempDenom > 0) {
             if ((tempDenom % 10) % 2 == 0) {
                 denomEvens[tempDenom % 10]++;
-                total++;
+                if (denomEvens[tempDenom % 10] == 1) {
+                    total++;
+                }
             }
             tempDenom = tempDenom / 10;
         }
 
         cout << total
             << " uncommon even digit(s)."
-            << "\n\n    The Uncommon even digit of";
+            << "\n\n    The uncommon even digit of";
 
         for (size_t i = 0; i < 5; i++) {
             if (denomEvens[i] > 0) {
                 cout << "\n      "
                     << i
-                    << " is found in the Numerator of num";
+                    << " is found in the Denominator of denom";
             }
 
             if (numEvens[i] > 0) {
                 cout << "\n      "
                     << i
-                    << " is found in the Denominator of denom";
+                    << " is found in the Numerator of num";
             }
         }
         cout << endl;
