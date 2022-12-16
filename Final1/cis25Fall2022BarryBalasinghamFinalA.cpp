@@ -10,13 +10,23 @@
 
 // Application Driver
 int main() {
-    
     displayClassInfoBB();
     runMenuFinalExamBB();
     return 0;
 }
 
 /** PROGRAM_OUTPUT
+CIS 25 - C++ Programming
+Laney College
+Barry Balasingham
+
+Final Exam Information --
+  Implemented by: Barry Balasingham
+  Submitted Date: 2022/12/14 by 10:00pm
+
+We write code to manipulate data, which are
+provided by the user, to produce the
+required outcome in the most efficient way!
 
 ****************************************
 *            MENU - Final Exam A       *

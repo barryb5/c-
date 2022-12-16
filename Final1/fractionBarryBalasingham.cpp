@@ -7,7 +7,7 @@
  */
 
 // Header/Include Files
-#include <iostream> 
+#include <iostream>
 #include "fractionBarryBalasingham.h"
 using namespace std;
 
@@ -19,7 +19,7 @@ FractionBarryBalasingham::FractionBarryBalasingham() : num{ 0 }, denom{ 1 } {
 
 FractionBarryBalasingham::FractionBarryBalasingham(int n, int d) :
     num{ n / gcdBB(n, d) }, denom{ d / gcdBB(n, d) } {
-    cout << "\n  Calling FractionBarryBalasingham(int, int)!" 
+    cout << "\n  Calling FractionBarryBalasingham(int, int)!"
         << endl;
 }
 
@@ -27,7 +27,7 @@ FractionBarryBalasingham::FractionBarryBalasingham(
     const FractionBarryBalasingham& frRef) :
     num{ frRef.num }, denom{ frRef.denom } {
     cout << "\n  Calling "
-        "FractionBarryBalasingham(const FractionBarryBalasingham&)!" 
+        "FractionBarryBalasingham(const FractionBarryBalasingham&)!"
         << endl;
 }
 

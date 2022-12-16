@@ -19,15 +19,15 @@
 using namespace std;
 
 class FractionBarryBalasingham {
-public:
+ public:
     FractionBarryBalasingham(int, int);
-    FractionBarryBalasingham(); 
-    FractionBarryBalasingham(const FractionBarryBalasingham&); 
+    FractionBarryBalasingham();
+    FractionBarryBalasingham(const FractionBarryBalasingham&);
 
-    ~FractionBarryBalasingham(); 
+    ~FractionBarryBalasingham();
 
     // Member Functions --
-    //   Besides the member functions given below, 
+    //   Besides the member functions given below,
     //   no other member functions are allowed !
 
     int getNumBB(void) const;
@@ -36,13 +36,14 @@ public:
     int getDenomBB(void) const;
     void setDenomBB(int);
 
-    void updateBB(int, int); 
+    void updateBB(int, int);
     int isPalindromeBB(void) const;
 
     void printBB(void) const;
-private:
-    int num; 
-    int denom; 
+
+ private:
+    int num;
+    int denom;
 
     int gcdBB(int, int);
 };

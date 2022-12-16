@@ -16,7 +16,7 @@ using namespace std;
 
 void displayClassInfoBB(void);
 void runMenuFinalExamBB(void);
-void initSubMenuBB(FractionBarryBalasingham*&); 
+void initSubMenuBB(FractionBarryBalasingham*&);
 void displayPalindromeInfoBB(const FractionBarryBalasingham*);
 
 #endif

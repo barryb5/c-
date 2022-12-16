@@ -5,7 +5,7 @@
  * Update on:   2022/12/15
  */
 // Header/Include Files
-#include <iostream> 
+#include <iostream>
 #include "fractionBarryBalasingham.h"
 #include "fractionUtilityBarryBalasingham.h"
 #include "finalExamUtilityBarryBalasingham.h"
@@ -13,7 +13,16 @@ using namespace std;
 
 // Function Definitions
 void displayClassInfoBB() {
-    
+    cout << "CIS 25 - C++ Programming"
+        << "\nLaney College"
+        << "\nBarry Balasingham"
+        << "\n\nFinal Exam Information --"
+        << "\n  Implemented by: Barry Balasingham"
+        << "\n  Submitted Date: 2022/12/14 by 10:00pm"
+        << "\n\nWe write code to manipulate data, which are"
+        << "\nprovided by the user, to produce the"
+        << "\nrequired outcome in the most efficient way!"
+        << endl;
 }
 
 void runMenuFinalExamBB() {
@@ -48,10 +57,10 @@ void runMenuFinalExamBB() {
                     << frPtrBB
                     << " is not a Palindrome!" << endl;
             }
-            
+
             break;
         case 3:
-            cout << "\n  Calling displayPalindromeInfoBB()!" 
+            cout << "\n  Calling displayPalindromeInfoBB()!"
                 << endl;
             // Your Code/Work Here
             displayPalindromeInfoBB(frPtrBB);
@@ -74,8 +83,8 @@ void runMenuFinalExamBB() {
 }
 
 void initSubMenuBB(FractionBarryBalasingham*& frPtrRefBB) {
-
     int optionBB;
+
     do {
         cout << "\n  *************************************"
             "\n  *    Sub-Menu -- initSubMenuBB()    *"
@@ -96,7 +105,7 @@ void initSubMenuBB(FractionBarryBalasingham*& frPtrRefBB) {
             }
             break;
         case 2:
-            cout << "\n    To call updateFractionBB()!" 
+            cout << "\n    To call updateFractionBB()!"
                 << endl;
             if (frPtrRefBB) {
                 updateFractionBB(frPtrRefBB);
@@ -105,7 +114,7 @@ void initSubMenuBB(FractionBarryBalasingham*& frPtrRefBB) {
             }
             break;
         case 3:
-            cout << "\n    Returning to previous menu ..." 
+            cout << "\n    Returning to previous menu ..."
                 << endl;
             break;
         default:
@@ -121,7 +130,7 @@ void displayPalindromeInfoBB(const FractionBarryBalasingham* frPtrBB) {
     int numEvens[5] { 0 };
     int denomEvens[5] { 0 };
     int total { 0 };
-    
+
     if (frPtrBB != nullptr && frPtrBB->isPalindromeBB()) {
         cout << "\n    The Fraction at "
             << frPtrBB

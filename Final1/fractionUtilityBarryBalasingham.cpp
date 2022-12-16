@@ -7,7 +7,7 @@
  */
 
 // Header/Include Files
-#include <iostream> 
+#include <iostream>
 #include "fractionBarryBalasingham.h"
 #include "fractionUtilityBarryBalasingham.h"
 using namespace std;
@@ -20,7 +20,7 @@ void createFractionBB(FractionBarryBalasingham*& frPtrRefBB) {
     int numBB;
     int denomBB;
 
-    cout << "\n      While createFractionBB() is running!" 
+    cout << "\n      While createFractionBB() is running!"
         << endl;
 
     cout << "\n      Enter an int for num: ";
@@ -38,10 +38,10 @@ void updateFractionBB(FractionBarryBalasingham*& frPtrRefBB) {
     int numBB;
     int denomBB;
 
-    cout << "\n      While createFractionBB() is running!" 
+    cout << "\n      While createFractionBB() is running!"
         << endl;
 
-    cout << "\n      The information of the current Fraction -" 
+    cout << "\n      The information of the current Fraction -"
         << endl;
     frPtrRefBB->printBB();
 
@@ -51,7 +51,7 @@ void updateFractionBB(FractionBarryBalasingham*& frPtrRefBB) {
     do {
         cout << "\n      Enter a non-zero int for denom: ";
         cin >> denomBB;
-    } while (!denomBB); 
+    } while (!denomBB);
 
     frPtrRefBB->updateBB(numBB, denomBB);
 }
