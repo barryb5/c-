@@ -56,3 +56,10 @@ add_executable (Final1
     Final1/fractionBarryBalasingham.cpp
     Final1/fractionUtilityBarryBalasingham.cpp
     )
+
+add_executable(25bHW1
+    25bHW1/cis25bSpring2023BarryBalasinghamHw1.cpp
+    25bHW1/finalExamUtilityBarryBalasingham.cpp
+    25bHW1/fractionBarryBalasingham.cpp
+    25bHW1/fractionUtilityFirstLast.cpp
+)
