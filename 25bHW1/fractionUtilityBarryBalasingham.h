@@ -18,8 +18,8 @@ using namespace std;
  
 // Required Functions 
  
-void createFractionFL(FractionBarryBalasingham*&); 
-void updateFractionFL(FractionBarryBalasingham*&); 
+void createFractionBB(FractionBarryBalasingham*&); 
+void updateFractionBB(FractionBarryBalasingham*&); 
  
 // No other functions are allowed here! 
  

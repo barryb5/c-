@@ -11,8 +11,49 @@
 #include "fractionBarryBalasingham.h" 
 #include "fractionUtilityBarryBalasingham.h" 
 using namespace std; 
- 
-// Function Definitions 
+
+// Function Definitions
+
+void createFractionBB(FractionBarryBalasingham*& frPtrRefBB) {
+    int numBB;
+    int denomBB;
+
+    cout << "\n      While createFractionBB() is running!"
+        << endl;
+
+    cout << "\n      Enter an int for num: ";
+    cin >> numBB;
+
+    do {
+        cout << "\n      Enter a non-zero int for denom: ";
+        cin >> denomBB;
+    } while (!denomBB);
+
+    frPtrRefBB = new FractionBarryBalasingham{ numBB, denomBB };
+}
+
+void updateFractionBB(FractionBarryBalasingham*& frPtrRefBB) {
+    int numBB;
+    int denomBB;
+
+    cout << "\n      While createFractionBB() is running!"
+        << endl;
+
+    cout << "\n      The information of the current Fraction -"
+        << endl;
+    frPtrRefBB->printBB();
+
+    cout << "\n      Enter an int for num: ";
+        cin >> numBB;
+
+    do {
+        cout << "\n      Enter a non-zero int for denom: ";
+        cin >> denomBB;
+    } while (!denomBB);
+
+    frPtrRefBB->updateBB(numBB, denomBB);
+}
+
 //     - You will have to update the names of  
 //       member functions properly. 
   

@@ -13,7 +13,7 @@ using namespace std;
  
 // Function Definitions  
  
-FractionBarryBalasingham::FractionBarryBalasingham() : num { nullptr }, denom { nullptr } {
+FractionBarryBalasingham::FractionBarryBalasingham() : num { 0 }, denom { 1 } {
     cout << "\n  Calling FractionBarryBalasingham()!" << endl;
 }
 
@@ -35,20 +35,20 @@ FractionBarryBalasingham::~FractionBarryBalasingham() {
     cout << "\n  Calling ~FractionBarryBalasingham()!" << endl;
 }
 
-int FractionBarryBalasingham::gcdBB(int arg1, int arg2) {
-    int gcd = 1;
-    int sign = (arg2 < 0) ? -1 : 1;
+int FractionBarryBalasingham::gcdBB(int arg1BB, int arg2BB) {
+    int gcdBB = 1;
+    int signBB = (arg2BB < 0) ? -1 : 1;
 
     cout << "\n  While ::gcdBB() is running!" << endl;
 
-    arg1 = (arg1 < 0) ? -arg1 : arg1;
-    arg2 = (arg2 < 0) ? -arg2 : arg2;
+    arg1BB = (arg1BB < 0) ? -arg1BB : arg1BB;
+    arg2BB = (arg2BB < 0) ? -arg2BB : arg2BB;
 
-    for (int i = 2; i <= arg1 && i <= arg2; i++)
-        if (arg1 % i == 0 && arg2 % i == 0)
-            gcd = i;
+    for (int i = 2; i <= arg1BB && i <= arg2BB; i++)
+        if (arg1BB % i == 0 && arg2BB % i == 0)
+            gcdBB = i;
 
-    return sign * gcd;
+    return signBB * gcdBB;
 }
 
 int FractionBarryBalasingham::getDenomBB() const {
@@ -58,14 +58,14 @@ int FractionBarryBalasingham::getDenomBB() const {
 }
 
 void FractionBarryBalasingham::setNumBB(int n) {
-    int gcf;
+    int gcfBB;
 
     cout << "\n  While ::setNumBB() is running!" << endl;
 
-    gcf = gcdBB(n, denom);
+    gcfBB = gcdBB(n, denom);
 
-    num = n / gcf;
-    denom /= gcf;
+    num = n / gcfBB;
+    denom /= gcfBB;
 }
 
 int FractionBarryBalasingham::getNumBB() const {
@@ -75,23 +75,23 @@ int FractionBarryBalasingham::getNumBB() const {
 }
 
 void FractionBarryBalasingham::setDenomBB(int d) {
-    int gcf;
+    int gcfBB;
 
     cout << "\n  While ::setDenomBB() is running!" << endl;
 
-    gcf = gcdBB(num, d);
+    gcfBB = gcdBB(num, d);
 
-    num /= gcf;
-    denom = d / gcf;
+    num /= gcfBB;
+    denom = d / gcfBB;
 }
 
 void FractionBarryBalasingham::updateBB(int n, int d) {
-    int gcf = gcdBB(n, d);
+    int gcfBB = gcdBB(n, d);
 
     cout << "\n  While ::updateBB() is running!" << endl;
 
-    num = n / gcf;
-    denom = d / gcf;
+    num = n / gcfBB;
+    denom = d / gcfBB;
 }
 
 void FractionBarryBalasingham::printBB() const {
@@ -113,13 +113,13 @@ int FractionBarryBalasingham::isPalindromeBB() const {
     bool numPalindromeBB = true;
     bool denomPalindromeBB = true;
 
-    while (tempNumBB % 10 > 0) {
+    while (tempNumBB > 0) {
         numArrBB[numLengthBB] = tempNumBB % 10;
         numLengthBB++;
         tempNumBB /= 10;
     }
 
-    while (tempDenomBB % 10 > 0) {
+    while (tempDenomBB > 0) {
         denomArrBB[denomLengthBB] = tempDenomBB % 10;
         denomLengthBB++;
         tempDenomBB /= 10;
@@ -137,7 +137,7 @@ int FractionBarryBalasingham::isPalindromeBB() const {
         }
     }
 
-    return (numPalindromeBB && denomPalindromeBB)
+    return (numPalindromeBB && denomPalindromeBB);
 }
 
 //     - You will have to update the names of  

@@ -135,7 +135,7 @@ int FractionBarryBalasingham::isPalindromeBB() const {
     }
 
 
-    return (numPalindrome && denomPalindrome)
+    return (numPalindrome && denomPalindrome);
 }
 
 // No other member functions are allowed here!
