@@ -1,17 +1,17 @@
-/** 
- * Program Name: finalExamUtilityBarryBalasingham.cpp 
- * Discussion:   Specification File 
- * Written By:   Barry Balasingham  
- * Update on:    2023/01/28 
- */ 
- 
-// Hear/Include Files 
-#include <iostream>  
-#include "fractionBarryBalasingham.h" 
-#include "fractionUtilityBarryBalasingham.h" 
-#include "finalExamUtilityBarryBalasingham.h" 
-using namespace std; 
- 
+/**
+ * Program Name: finalExamUtilityBarryBalasingham.cpp
+ * Discussion:   Specification File
+ * Written By:   Barry Balasingham
+ * Update on:    2023/01/28
+ */
+
+// Hear/Include Files
+#include <iostream>
+#include "fractionBarryBalasingham.h"
+#include "fractionUtilityBarryBalasingham.h"
+#include "finalExamUtilityBarryBalasingham.h"
+using namespace std;
+
 void displayClassInfoBB() {
     cout << "CIS 25B - Fun C++ Programming"
         << "\nLaney College"
@@ -50,7 +50,6 @@ void runMenuFinalExamBB() {
             break;
         case 2:
             cout << "\n  Calling isPalindromeBB()!" << endl;
-            // Your Code/Work Here
             if (nullptr != frPtrBB && frPtrBB->isPalindromeBB()) {
                 cout << "\n  The Fraction at "
                     << frPtrBB
@@ -65,13 +64,11 @@ void runMenuFinalExamBB() {
         case 3:
             cout << "\n  Calling displayPalindromeInfoBB()!"
                 << endl;
-            // Your Code/Work Here
             displayPalindromeInfoBB(frPtrBB);
             break;
         case 4:
             cout << "\n  Calling printBB()!\n" << endl;
             frPtrBB->printBB();
-            // Your Code/Work Here
             break;
         case 5:
             cout << "\n  Clean Up!" << endl;
@@ -185,11 +182,3 @@ void displayPalindromeInfoBB(const FractionBarryBalasingham* frPtrBB) {
                     << " is not a Palindrome!" << endl;
     }
 }
-
-
-// Function Definitions 
-//     - You will have to update the names of  
-//       member functions properly. 
- 
-//     - You MUST provide function definitions for 
-//       all member functions in File #1 above. 

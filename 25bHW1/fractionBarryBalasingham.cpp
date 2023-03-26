@@ -5,14 +5,14 @@
  * Written By:   Barry Balasingham  
  * Updated on:   2023/01/28 
  */ 
- 
-// Header/Include Files 
-#include <iostream>  
-#include "fractionBarryBalasingham.h" 
-using namespace std; 
- 
-// Function Definitions  
- 
+
+// Header/Include Files
+#include <iostream>
+#include "fractionBarryBalasingham.h"
+using namespace std;
+
+// Function Definitions
+
 FractionBarryBalasingham::FractionBarryBalasingham() : num { 0 }, denom { 1 } {
     cout << "\n  Calling FractionBarryBalasingham()!" << endl;
 }
@@ -139,10 +139,3 @@ int FractionBarryBalasingham::isPalindromeBB() const {
 
     return (numPalindromeBB && denomPalindromeBB);
 }
-
-//     - You will have to update the names of  
-//       member functions properly. 
- 
-//     - You MUST provide function definitions for 
-//       all member functions in File #1 above. 
- 
