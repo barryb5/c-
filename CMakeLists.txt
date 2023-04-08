@@ -61,5 +61,12 @@ add_executable(25bHW1
     25bHW1/cis25bSpring2023BarryBalasinghamHw1.cpp
     25bHW1/finalExamUtilityBarryBalasingham.cpp
     25bHW1/fractionBarryBalasingham.cpp
-    25bHW1/fractionUtilityFirstLast.cpp
+    25bHW1/fractionUtilityBarryBalasingham.cpp
+)
+
+add_executable(25bHW2
+    25bHW2/cis25bSpring2023BarryBalasinghamHw2.cpp
+    25bHW2/fractionBarryBalasingham.cpp
+    25bHW2/fractionUtilityBarryBalasingham.cpp
+    25bHW2/pointBarryBalasingham.cpp
 )
