@@ -17,25 +17,29 @@ using namespace std;
 PointBarryBalasingham::PointBarryBalasingham() : 
     xPtr { new FractionBarryBalasingham() }, 
     yPtr { new FractionBarryBalasingham() } {
-    cout << "\n  Calling PointBarryBalasingham()!" << endl;
+    // cout << "\n  Calling PointBarryBalasingham()!" << endl;
 }
 
 PointBarryBalasingham::PointBarryBalasingham(int xNum, int xDenom, int yNum, int yDenom) : 
     xPtr { new FractionBarryBalasingham(xNum, yNum) },
     yPtr { new FractionBarryBalasingham(yNum, yDenom) } {
-    cout << "\n  Calling PointBarryBalasingham()!" << endl;
+
+    // cout << "ptr" << endl;
+    // cout << xPtr->getNumBB() << endl;
+    // cout << xPtr->getDenomBB() << endl;
+
 }
 
-PointBarryBalasingham::PointBarryBalasingham(FractionBarryBalasingham& x, FractionBarryBalasingham& y) : 
+PointBarryBalasingham::PointBarryBalasingham(const FractionBarryBalasingham& x, const FractionBarryBalasingham& y) : 
     xPtr { new FractionBarryBalasingham(x) },
     yPtr { new FractionBarryBalasingham(y) } {
-    cout << "\n  Calling PointBarryBalasingham()!" << endl;
+    // cout << "\n  Calling PointBarryBalasingham()!" << endl;
 }
 
-PointBarryBalasingham::PointBarryBalasingham(PointBarryBalasingham& point) : 
-    xPtr { new FractionBarryBalasingham(*point.getXBB()->getNumBB(), *point.getXBB()->getDenomBB())  },
-    yPtr { new FractionBarryBalasingham(*point.getYBB()->getNumBB(), *point.getYBB()->getDenomBB()) } {
-    cout << "\n  Calling PointBarryBalasingham()!" << endl;
+PointBarryBalasingham::PointBarryBalasingham(const PointBarryBalasingham& point) : 
+    xPtr { new FractionBarryBalasingham(*point.xPtr) },
+    yPtr { new FractionBarryBalasingham(*point.yPtr) } {
+    // cout << "\n  Calling PointBarryBalasingham()!" << endl;
 }
 
 PointBarryBalasingham::~PointBarryBalasingham() {

@@ -9,16 +9,18 @@
 // Header/Include Files 
 #include <iostream>  
 #include "fractionBarryBalasingham.h" 
-// #include "fractionUtilityBarryBalasingham.h" 
-// #include "finalExamUtilityBarryBalasingham.h" 
+#include "fractionUtilityBarryBalasingham.h"
+#include "pointBarryBalasingham.h"
+#include "pointUtilityBarryBalasingham.h"
+#include "hw2UtilityBarryBalasingham.h" 
 using namespace std; 
  
 // Application Driver 
 int main() { 
     
-    // displayClassInfoBB(); 
+    displayClassInfoBB(); 
 
-    // runMenuFinalExamBB(); 
+    runMenuBB(); 
 
     return 0; 
 }

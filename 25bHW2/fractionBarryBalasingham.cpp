@@ -14,32 +14,38 @@ using namespace std;
 // Function Definitions
 
 FractionBarryBalasingham::FractionBarryBalasingham() : num { 0 }, denom { 1 } {
-    cout << "\n  Calling FractionBarryBalasingham()!" << endl;
+    // cout << "\n  Calling FractionBarryBalasingham()!" << endl;
 }
 
 FractionBarryBalasingham::FractionBarryBalasingham(int n, int d) :
     num{ n / gcdBB(n, d) }, denom{ d / gcdBB(n, d) } {
-    cout << "\n  Calling FractionBarryBalasingham(int, int)!"
-        << endl;
+    // cout << "\n  Calling FractionBarryBalasingham(int, int)!"
+        // << endl;
+    // cout << "\ngcdBB: " << gcdBB(n, d) << endl;
+    // cout << "n: " << n << endl;
+    // cout << "num: " << n/gcdBB(n, d) << endl;
+    // cout << "d: " << d << endl;
+    // cout << "denom: " << d/gcdBB(n, d) << endl;
+    // cout << "\n" << num << "/" << denom << endl;
 }
 
 FractionBarryBalasingham::FractionBarryBalasingham(
     const FractionBarryBalasingham& frRef) :
     num{ frRef.num }, denom{ frRef.denom } {
-    cout << "\n  Calling "
-        "FractionBarryBalasingham(const FractionBarryBalasingham&)!"
-        << endl;
+    // cout << "\n  Calling "
+    //     "FractionBarryBalasingham(const FractionBarryBalasingham&)!"
+    //     << endl;
 }
 
 FractionBarryBalasingham::~FractionBarryBalasingham() {
-    cout << "\n  Calling ~FractionBarryBalasingham()!" << endl;
+    // cout << "\n  Calling ~FractionBarryBalasingham()!" << endl;
 }
 
 int FractionBarryBalasingham::gcdBB(int arg1BB, int arg2BB) {
     int gcdBB = 1;
     int signBB = (arg2BB < 0) ? -1 : 1;
 
-    cout << "\n  While ::gcdBB() is running!" << endl;
+    // cout << "\n  While ::gcdBB() is running!" << endl;
 
     arg1BB = (arg1BB < 0) ? -arg1BB : arg1BB;
     arg2BB = (arg2BB < 0) ? -arg2BB : arg2BB;
@@ -52,7 +58,7 @@ int FractionBarryBalasingham::gcdBB(int arg1BB, int arg2BB) {
 }
 
 int FractionBarryBalasingham::getDenomBB() const {
-    cout << "\n  While ::getDenomBB() is running!" << endl;
+    // cout << "\n  While ::getDenomBB() is running!" << endl;
 
     return denom;
 }
@@ -60,7 +66,7 @@ int FractionBarryBalasingham::getDenomBB() const {
 void FractionBarryBalasingham::setNumBB(int n) {
     int gcfBB;
 
-    cout << "\n  While ::setNumBB() is running!" << endl;
+    // cout << "\n  While ::setNumBB() is running!" << endl;
 
     gcfBB = gcdBB(n, denom);
 
@@ -69,7 +75,7 @@ void FractionBarryBalasingham::setNumBB(int n) {
 }
 
 int FractionBarryBalasingham::getNumBB() const {
-    cout << "\n  While ::getNumBB() is running!" << endl;
+    // cout << "\n  While ::getNumBB() is running!" << endl;
 
     return num;
 }
@@ -77,7 +83,7 @@ int FractionBarryBalasingham::getNumBB() const {
 void FractionBarryBalasingham::setDenomBB(int d) {
     int gcfBB;
 
-    cout << "\n  While ::setDenomBB() is running!" << endl;
+    // cout << "\n  While ::setDenomBB() is running!" << endl;
 
     gcfBB = gcdBB(num, d);
 
@@ -88,18 +94,18 @@ void FractionBarryBalasingham::setDenomBB(int d) {
 void FractionBarryBalasingham::updateBB(int n, int d) {
     int gcfBB = gcdBB(n, d);
 
-    cout << "\n  While ::updateBB() is running!" << endl;
+    // cout << "\n  While ::updateBB() is running!" << endl;
 
     num = n / gcfBB;
     denom = d / gcfBB;
 }
 
 void FractionBarryBalasingham::printBB() const {
-    cout << "\n  While ::printBB() is running!" << endl;
+    // cout << "\n  While ::printBB() is running!" << endl;
 
-    cout << "\n    Address : " << this
-        << "\n      num : " << num
-        << "\n      denom : " << denom << endl;
+    cout << "\n          Address : " << this
+        << "\n            num : " << num
+        << "\n            denom : " << denom << endl;
 }
 
 int FractionBarryBalasingham::isPalindromeBB() const {
