@@ -19,14 +19,6 @@ FractionBarryBalasingham::FractionBarryBalasingham() : num { 0 }, denom { 1 } {
 
 FractionBarryBalasingham::FractionBarryBalasingham(int n, int d) :
     num{ n / gcdBB(n, d) }, denom{ d / gcdBB(n, d) } {
-    // cout << "\n  Calling FractionBarryBalasingham(int, int)!"
-        // << endl;
-    // cout << "\ngcdBB: " << gcdBB(n, d) << endl;
-    // cout << "n: " << n << endl;
-    // cout << "num: " << n/gcdBB(n, d) << endl;
-    // cout << "d: " << d << endl;
-    // cout << "denom: " << d/gcdBB(n, d) << endl;
-    // cout << "\n" << num << "/" << denom << endl;
 }
 
 FractionBarryBalasingham::FractionBarryBalasingham(
@@ -43,9 +35,7 @@ FractionBarryBalasingham::~FractionBarryBalasingham() {
 
 int FractionBarryBalasingham::gcdBB(int arg1BB, int arg2BB) {
     int gcdBB = 1;
-    int signBB = (arg2BB < 0) ? -1 : 1;
-
-    // cout << "\n  While ::gcdBB() is running!" << endl;
+    int signBB = (arg1BB < 0) ? -1 : 1;
 
     arg1BB = (arg1BB < 0) ? -arg1BB : arg1BB;
     arg2BB = (arg2BB < 0) ? -arg2BB : arg2BB;
@@ -58,15 +48,11 @@ int FractionBarryBalasingham::gcdBB(int arg1BB, int arg2BB) {
 }
 
 int FractionBarryBalasingham::getDenomBB() const {
-    // cout << "\n  While ::getDenomBB() is running!" << endl;
-
     return denom;
 }
 
 void FractionBarryBalasingham::setNumBB(int n) {
     int gcfBB;
-
-    // cout << "\n  While ::setNumBB() is running!" << endl;
 
     gcfBB = gcdBB(n, denom);
 
@@ -75,16 +61,11 @@ void FractionBarryBalasingham::setNumBB(int n) {
 }
 
 int FractionBarryBalasingham::getNumBB() const {
-    // cout << "\n  While ::getNumBB() is running!" << endl;
-
     return num;
 }
 
 void FractionBarryBalasingham::setDenomBB(int d) {
     int gcfBB;
-
-    // cout << "\n  While ::setDenomBB() is running!" << endl;
-
     gcfBB = gcdBB(num, d);
 
     num /= gcfBB;
@@ -93,8 +74,6 @@ void FractionBarryBalasingham::setDenomBB(int d) {
 
 void FractionBarryBalasingham::updateBB(int n, int d) {
     int gcfBB = gcdBB(n, d);
-
-    // cout << "\n  While ::updateBB() is running!" << endl;
 
     num = n / gcfBB;
     denom = d / gcfBB;

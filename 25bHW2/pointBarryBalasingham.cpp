@@ -21,12 +21,8 @@ PointBarryBalasingham::PointBarryBalasingham() :
 }
 
 PointBarryBalasingham::PointBarryBalasingham(int xNum, int xDenom, int yNum, int yDenom) : 
-    xPtr { new FractionBarryBalasingham(xNum, yNum) },
+    xPtr { new FractionBarryBalasingham(xNum, xDenom) },
     yPtr { new FractionBarryBalasingham(yNum, yDenom) } {
-
-    // cout << "ptr" << endl;
-    // cout << xPtr->getNumBB() << endl;
-    // cout << xPtr->getDenomBB() << endl;
 
 }
 

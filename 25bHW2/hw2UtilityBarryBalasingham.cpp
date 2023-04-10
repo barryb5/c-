@@ -52,8 +52,14 @@ void runMenuBB() {
                 initSubMenuBB(pPtr1BB, pPtr2BB);
                 break;
             case 2:
+                cout << "\n\n  To call performPointOperation() - " << endl;
+                //pointOperatorsMenu(*pPtr1BB, *pPtr2BB);
+                break;
             case 3:
+                break;
             case 4:
+                //displayPointMenuBB(pPtr1BB, pPtr2BB);
+                break;
             case 5:
                 cout << "\n  Clean Up!" << endl;
                 delete pPtr1BB;
@@ -118,7 +124,7 @@ void initSubMenuBB(PointBarryBalasingham*& pPtrRef1BB, PointBarryBalasingham*& p
     } while (optionBB != 4);
 }
 
-void displayPointMenuBB(PointBarryBalasingham*& pPtrRef1BB, PointBarryBalasingham*& pPtrRef2BB) {
+void displayPointMenuBB(PointBarryBalasingham& pPtrRef1BB, PointBarryBalasingham& pPtrRef2BB) {
     int optionBB;
 
     do {
@@ -133,10 +139,10 @@ void displayPointMenuBB(PointBarryBalasingham*& pPtrRef1BB, PointBarryBalasingha
 
         switch (optionBB) {
         case 1:
-            displayPointBB(pPtrRef1BB, 1);
+            displayPointBB(&pPtrRef1BB, 1);
             break;
         case 2:
-            displayPointBB(pPtrRef2BB, 2);
+            displayPointBB(&pPtrRef2BB, 2);
             break;
         case 3:
             break;        
@@ -144,5 +150,39 @@ void displayPointMenuBB(PointBarryBalasingham*& pPtrRef1BB, PointBarryBalasingha
             break;
         }
     } while (optionBB != 3);
+}
+
+void pointOperatorsMenu(PointBarryBalasingham* pPtrRef1BB, PointBarryBalasingham* pPtrRef2BB) {
+    int optionBB;
+
+    do {
+        cout << "\n    *****************************"
+            "\n    *    Menu for displayPoint() *"
+            "\n    * 1. Displaying Point #1     *"
+            "\n    * 2. Displaying Point #1     *"
+            "\n    * 3. Returning               *"
+            "\n    *****************************"
+            "\n  Enter an option: ";
+        cin >> optionBB;
+
+        switch (optionBB) {
+        case 1:
+            alignmentBB(pPtrRef1BB, pPtrRef2BB);
+            break;
+        case 2:
+            cout << "\n      Quadrant Confirmation:"
+                <<"\n\n        Point 1 is in Quadrant ";
+            quadrantBB(pPtrRef1BB);
+            cout <<"        Point 2 is in Quadrant ";
+            quadrantBB(pPtrRef2BB);
+            break;
+        case 3:
+            break;
+        case 4:
+            break;
+        default:
+            break;
+        }
+    } while (optionBB != 4);
 }
 // Your function definitions here

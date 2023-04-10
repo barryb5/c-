@@ -72,3 +72,13 @@ add_executable(25bHW2
     25bHW2/pointUtilityBarryBalasingham.cpp
     25bHW2/hw2UtilityBarryBalasingham.cpp
 )
+
+
+add_executable(dad
+    25bHW2/main.cpp
+    25bHW2/fractionBarryBalasingham.cpp
+    25bHW2/fractionUtilityBarryBalasingham.cpp
+    25bHW2/pointBarryBalasingham.cpp
+    25bHW2/pointUtilityBarryBalasingham.cpp
+    25bHW2/hw2UtilityBarryBalasingham.cpp
+)

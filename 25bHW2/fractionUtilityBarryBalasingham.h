@@ -19,8 +19,14 @@ using namespace std;
 
 // Required Functions
 
-void createFractionFL(FractionBarryBalasingham*&);
-void updateFractionFL(FractionBarryBalasingham*&);
+void createFractionBB(FractionBarryBalasingham*&);
+void updateFractionBB(FractionBarryBalasingham*&);
+int fractionEqualBB(FractionBarryBalasingham*, FractionBarryBalasingham*);
+bool isPositiveBB(FractionBarryBalasingham*);
+FractionBarryBalasingham addFractionBB(FractionBarryBalasingham*, FractionBarryBalasingham*);
+FractionBarryBalasingham subtractFractionBB(FractionBarryBalasingham*, FractionBarryBalasingham*);
+FractionBarryBalasingham multiplyFractionBB(FractionBarryBalasingham*, FractionBarryBalasingham*);
+
 
 // Other functions are allowed here!
 // You will have to update the names of member functions properly.

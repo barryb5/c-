@@ -21,7 +21,8 @@ using namespace std;
 void displayClassInfoBB(void);
 void runMenuBB(void);
 void initSubMenuBB(PointBarryBalasingham*&, PointBarryBalasingham*&);
-void displayPointMenuBB(PointBarryBalasingham*&, PointBarryBalasingham*&);
+void displayPointMenuBB(PointBarryBalasingham*, PointBarryBalasingham*);
+void pointOperatorsMenu(PointBarryBalasingham*, PointBarryBalasingham*);
 
 // Your supportive functions HERE
 // No additional member data and functions are allowed!

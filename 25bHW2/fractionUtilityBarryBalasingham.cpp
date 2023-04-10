@@ -54,3 +54,39 @@ void updateFractionBB(FractionBarryBalasingham*& frPtrRefBB) {
 
     frPtrRefBB->updateBB(numBB, denomBB);
 }
+
+int fractionEqualBB(FractionBarryBalasingham* frPtr1BB, FractionBarryBalasingham* frPtr2BB) {
+    if (frPtr1BB->getNumBB() == frPtr2BB->getNumBB() && frPtr1BB->getDenomBB() == frPtr2BB->getDenomBB()) {
+        return 1;
+    }
+    return 0;
+}
+
+bool isPositiveBB(FractionBarryBalasingham* frPtrRefBB) {
+    if ((frPtrRefBB->getNumBB() > 0 && frPtrRefBB->getDenomBB() < 0) 
+        || (frPtrRefBB->getNumBB() < 0 && frPtrRefBB->getDenomBB() > 0)) {
+        return false;
+    }
+    return true;
+}
+
+FractionBarryBalasingham addFractionBB(FractionBarryBalasingham* frPtr1BB, FractionBarryBalasingham* frPtr2BB) {
+    int denomBB = frPtr1BB->getDenomBB() * frPtr2BB->getDenomBB();
+    int numBB = (frPtr1BB->getNumBB() * frPtr2BB->getDenomBB()) + (frPtr2BB->getNumBB() * frPtr1BB->getDenomBB());
+
+    return FractionBarryBalasingham(numBB, denomBB);
+}
+
+FractionBarryBalasingham subtractFractionBB(FractionBarryBalasingham* frPtr1BB, FractionBarryBalasingham* frPtr2BB) {
+    int denomBB = frPtr1BB->getDenomBB() * frPtr2BB->getDenomBB();
+    int numBB = (frPtr1BB->getNumBB() * frPtr2BB->getDenomBB()) - (frPtr2BB->getNumBB() * frPtr1BB->getDenomBB());
+
+    return FractionBarryBalasingham(numBB, denomBB);
+}
+
+FractionBarryBalasingham multiplyFractionBB(FractionBarryBalasingham* frPtr1BB, FractionBarryBalasingham* frPtr2BB) {
+    int numBB = frPtr1BB->getNumBB() * frPtr2BB->getNumBB();
+    int denomBB = (frPtr1BB->getDenomBB() * frPtr2BB->getDenomBB());
+
+    return FractionBarryBalasingham(numBB, denomBB);
+}

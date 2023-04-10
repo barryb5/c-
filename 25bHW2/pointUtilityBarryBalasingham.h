@@ -17,8 +17,10 @@ using namespace std;
 
 void createPointBB(PointBarryBalasingham*&, PointBarryBalasingham*&);
 void updatePointBB(PointBarryBalasingham*&, PointBarryBalasingham*&);
-void displayPointBB(PointBarryBalasingham*&, int);
 
-// Supportive Functions HERE
-// No additional member data are allowed!
+void displayPointBB(PointBarryBalasingham*, int);
+void alignmentBB(PointBarryBalasingham*, PointBarryBalasingham*);
+void quadrantBB(PointBarryBalasingham*);
+void midpointBB(PointBarryBalasingham*, PointBarryBalasingham*);
+FractionBarryBalasingham areaOfRectangleBB(PointBarryBalasingham*, PointBarryBalasingham*);
 #endif

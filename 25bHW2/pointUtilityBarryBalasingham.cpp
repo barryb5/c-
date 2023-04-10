@@ -13,6 +13,7 @@
 #include <iostream>
 #include "pointBarryBalasingham.h"
 #include "pointUtilityBarryBalasingham.h"
+#include "fractionUtilityBarryBalasingham.h"
 
 using namespace std;
 
@@ -44,7 +45,6 @@ void createPointBB(PointBarryBalasingham*& pPtrRef1BB, PointBarryBalasingham*& p
     } while (!yDenomBB);
 
     pPtrRef1BB = new PointBarryBalasingham(xNumBB, xDenomBB, yNumBB, yDenomBB);
-    cout << "\n" << pPtrRef1BB->getXBB()->getNumBB() << "/"<< pPtrRef1BB->getXBB()->getDenomBB();
 
     cout << "\n    Creating Point #2!"
         << "\n      For x-coordinate as Fraction"
@@ -88,12 +88,12 @@ void updatePointBB(PointBarryBalasingham*& pPtrRef1BB, PointBarryBalasingham*& p
 
     cout << "      For y-coordinate as Fraction"
         << "\n         Enter an int for num: ";
-    cin >> xNumBB;
+    cin >> yNumBB;
 
     do {
         cout << "         Enter an int for denom: ";
-        cin >> xDenomBB;
-    } while (!xDenomBB);
+        cin >> yDenomBB;
+    } while (!yDenomBB);
 
     pPtrRef1BB->getXBB()->updateBB(xNumBB, xDenomBB);
     pPtrRef1BB->getYBB()->updateBB(yNumBB, yDenomBB);
@@ -110,25 +110,85 @@ void updatePointBB(PointBarryBalasingham*& pPtrRef1BB, PointBarryBalasingham*& p
 
     cout << "      For y-coordinate as Fraction"
         << "\n         Enter an int for num: ";
-    cin >> xNumBB;
+    cin >> yNumBB;
 
     do {
         cout << "         Enter an int for denom: ";
-        cin >> xDenomBB;
-    } while (!xDenomBB);
+        cin >> yDenomBB;
+    } while (!yDenomBB);
 
     pPtrRef2BB->getXBB()->updateBB(xNumBB, xDenomBB);
     pPtrRef2BB->getYBB()->updateBB(yNumBB, yDenomBB);
     return;
 }
 
-void displayPointBB(PointBarryBalasingham*& pPtrRefBB, int point) {
+void displayPointBB(PointBarryBalasingham* pPtrBB, int point) {
     cout << "\n    Displaying Point #" << point << "!"
-        << "\n\n      Address: " << pPtrRefBB
+        << "\n\n      Address: " << pPtrBB
         << "\n        For x-coordinate as Fraction:";
-        pPtrRefBB->getXBB()->printBB();
-        pPtrRefBB->getYBB()->printBB();
+        pPtrBB->getXBB()->printBB();
+        pPtrBB->getYBB()->printBB();
 
     // cout << "\n" << pPtrRefBB->getXBB()->getNumBB() << "/"<< pPtrRefBB->getXBB()->getDenomBB();
 
+}
+
+void alignmentBB(PointBarryBalasingham* pPtr1BB, PointBarryBalasingham* pPtr2BB) {
+    FractionBarryBalasingham* y1BB = pPtr1BB->getYBB();
+    FractionBarryBalasingham* y2BB = pPtr2BB->getYBB();
+    FractionBarryBalasingham* x1BB = pPtr1BB->getYBB();
+    FractionBarryBalasingham* x2BB = pPtr2BB->getYBB();
+    
+    cout << "\n      Alighnment Confirmation:"
+        <<"\n\n        Horizontal Alignment: "
+        << fractionEqualBB(y1BB, y2BB)
+        <<"\n\n        Vertical Alignment: "
+        << fractionEqualBB(x1BB, x2BB);
+}
+
+void quadrantBB(PointBarryBalasingham* pPtrRefBB) {
+    FractionBarryBalasingham* yBB = pPtrRefBB->getYBB();
+    FractionBarryBalasingham* xBB = pPtrRefBB->getXBB();
+
+    if (isPositiveBB(yBB)) {
+        if (isPositiveBB(xBB)) {
+            cout << "I" << endl;
+        } else {
+            cout << "II" << endl;
+        }
+    } else {
+        if (isPositiveBB(xBB)) {
+            cout << "IV" << endl;
+        } else {
+            cout << "III" << endl;
+        }
+    }        
+}
+
+void midpointBB(PointBarryBalasingham* pPtr1BB, PointBarryBalasingham* pPtr2BB) {
+    FractionBarryBalasingham* y1BB = pPtr1BB->getYBB();
+    FractionBarryBalasingham* y2BB = pPtr2BB->getYBB();
+    FractionBarryBalasingham* x1BB = pPtr1BB->getYBB();
+    FractionBarryBalasingham* x2BB = pPtr2BB->getYBB();
+    cout << "\n      Midpoint Confirmation:"
+        << "\n\n        Fraction From x-coordinate";
+    
+    FractionBarryBalasingham midpointBB = addFractionBB(x1BB, x2BB);
+    midpointBB.setDenomBB(midpointBB.getDenomBB() * 2);
+    midpointBB.printBB();
+
+    cout << "\n\n        Fraction From y-coordinate";
+
+    midpointBB = addFractionBB(y1BB, y2BB);
+    midpointBB.setDenomBB(midpointBB.getDenomBB() * 2);
+    midpointBB.printBB();
+}
+
+FractionBarryBalasingham areaOfRectangleBB(PointBarryBalasingham* pPtr1BB, PointBarryBalasingham* pPtr2BB) {
+
+    FractionBarryBalasingham lengthBB = subtractFractionBB(pPtr1BB->getXBB(), pPtr2BB->getXBB()); 
+    FractionBarryBalasingham heightBB = subtractFractionBB(pPtr1BB->getXBB(), pPtr2BB->getXBB()); 
+
+    FractionBarryBalasingham areaBB = multiplyFractionBB(&lengthBB, &heightBB);
+    return areaBB; 
 }
