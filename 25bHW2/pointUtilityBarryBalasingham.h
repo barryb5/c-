@@ -22,5 +22,7 @@ void displayPointBB(PointBarryBalasingham*, int);
 void alignmentBB(PointBarryBalasingham*, PointBarryBalasingham*);
 void quadrantBB(PointBarryBalasingham*);
 void midpointBB(PointBarryBalasingham*, PointBarryBalasingham*);
+void isPlaindromeBB(PointBarryBalasingham*, PointBarryBalasingham*);
+
 FractionBarryBalasingham areaOfRectangleBB(PointBarryBalasingham*, PointBarryBalasingham*);
 #endif

@@ -24,7 +24,8 @@ bool isPositiveBB(FractionBarryBalasingham*);
 FractionBarryBalasingham addFractionBB(FractionBarryBalasingham*, FractionBarryBalasingham*);
 FractionBarryBalasingham subtractFractionBB(FractionBarryBalasingham*, FractionBarryBalasingham*);
 FractionBarryBalasingham multiplyFractionBB(FractionBarryBalasingham*, FractionBarryBalasingham*);
-
+bool smallerFractionBB(FractionBarryBalasingham*, FractionBarryBalasingham*);
+bool largerFractionBB(FractionBarryBalasingham*, FractionBarryBalasingham*);
 
 // Other functions are allowed here!
 // You will have to update the names of member functions properly.

@@ -13,20 +13,23 @@ int main(int argc, char* argv[]) {
     FractionBarryBalasingham f0(1,1);
     FractionBarryBalasingham f1(11,1);
 
-    addFractionBB(&f0, &f1).printBB();
+    // addFractionBB(&f0, &f1).printBB();
 
-    PointBarryBalasingham p0(-1, 1, -1, 1);
+    PointBarryBalasingham p0(-4, 1, -111, 1);
     p0.getXBB()->printBB();
     p0.getYBB()->printBB();   
 
-    PointBarryBalasingham p1(10, 1, 10, 1);
+    PointBarryBalasingham p1(6, 1, 373, 1);
     p1.getXBB()->printBB();
     p1.getYBB()->printBB();
 
-    quadrantBB(&p0);
-    quadrantBB(&p1);
+    isPlaindromeBB(&p0, &p1);
 
-    midpointBB(&p0, &p1);
 
-    areaOfRectangleBB(&p0, &p1).printBB();
+    // quadrantBB(&p0);
+    // quadrantBB(&p1);
+
+    // midpointBB(&p0, &p1);
+
+    // areaOfRectangleBB(&p0, &p1).printBB();
 }

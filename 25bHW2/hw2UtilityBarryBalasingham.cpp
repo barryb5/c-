@@ -37,7 +37,7 @@ void runMenuBB() {
     do {
         cout << "\n****************************************"
             "\n* MENU - HW #2                         *"
-            "\n* 1. Calling initSubMenuHw2FL()        *"
+            "\n* 1. Calling initSubMenuHw2BB()        *"
             "\n* 2. Point Operators                   *"
             "\n* 3. Displaying Palindrome Info        *"
             "\n* 4. Displaying selected Point(s)      *"
@@ -52,13 +52,23 @@ void runMenuBB() {
                 initSubMenuBB(pPtr1BB, pPtr2BB);
                 break;
             case 2:
-                cout << "\n\n  To call performPointOperation() - " << endl;
-                //pointOperatorsMenu(*pPtr1BB, *pPtr2BB);
+                if (pPtr1BB != nullptr || pPtr2BB != nullptr) {
+                    cout << "\n    Inappropriate option as there are no Points!" << endl;
+                } else {
+                    createPointBB(pPtr1BB, pPtr2BB);
+                }
+                pointOperatorsMenu(pPtr1BB, pPtr2BB);
                 break;
             case 3:
+                if (pPtr1BB != nullptr || pPtr2BB != nullptr) {
+                    cout << "\n    Inappropriate option as there are no Points!" << endl;
+                } else {
+                    createPointBB(pPtr1BB, pPtr2BB);
+                }
+                isPlaindromeBB(pPtr1BB, pPtr2BB);
                 break;
             case 4:
-                //displayPointMenuBB(pPtr1BB, pPtr2BB);
+                displayPointMenuBB(pPtr1BB, pPtr2BB);
                 break;
             case 5:
                 cout << "\n  Clean Up!" << endl;
@@ -124,7 +134,7 @@ void initSubMenuBB(PointBarryBalasingham*& pPtrRef1BB, PointBarryBalasingham*& p
     } while (optionBB != 4);
 }
 
-void displayPointMenuBB(PointBarryBalasingham& pPtrRef1BB, PointBarryBalasingham& pPtrRef2BB) {
+void displayPointMenuBB(PointBarryBalasingham* pPtrRef1BB, PointBarryBalasingham* pPtrRef2BB) {
     int optionBB;
 
     do {
@@ -139,12 +149,13 @@ void displayPointMenuBB(PointBarryBalasingham& pPtrRef1BB, PointBarryBalasingham
 
         switch (optionBB) {
         case 1:
-            displayPointBB(&pPtrRef1BB, 1);
+            displayPointBB(pPtrRef1BB, 1);
             break;
         case 2:
-            displayPointBB(&pPtrRef2BB, 2);
+            displayPointBB(pPtrRef2BB, 2);
             break;
         case 3:
+            isPlaindromeBB(pPtrRef1BB, pPtrRef2BB);
             break;        
         default:
             break;
@@ -156,12 +167,14 @@ void pointOperatorsMenu(PointBarryBalasingham* pPtrRef1BB, PointBarryBalasingham
     int optionBB;
 
     do {
-        cout << "\n    *****************************"
-            "\n    *    Menu for displayPoint() *"
-            "\n    * 1. Displaying Point #1     *"
-            "\n    * 2. Displaying Point #1     *"
-            "\n    * 3. Returning               *"
-            "\n    *****************************"
+        cout << "\n    *************************************"
+            "\n    * Menu for performPointOperation()  *"
+            "\n    * 1. Alignment: Horizontal/Vertical *"
+            "\n    * 2. Displaying Quadrant            *"
+            "\n    * 3. Displaying midpoint            *"
+            "\n    * 4. Displaying area of rectangle   *"
+            "\n    * 3. Returning                      *"
+            "\n    *************************************"
             "\n  Enter an option: ";
         cin >> optionBB;
 
@@ -177,6 +190,7 @@ void pointOperatorsMenu(PointBarryBalasingham* pPtrRef1BB, PointBarryBalasingham
             quadrantBB(pPtrRef2BB);
             break;
         case 3:
+            midpointBB(pPtrRef1BB, pPtrRef2BB);
             break;
         case 4:
             break;

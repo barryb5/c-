@@ -192,3 +192,76 @@ FractionBarryBalasingham areaOfRectangleBB(PointBarryBalasingham* pPtr1BB, Point
     FractionBarryBalasingham areaBB = multiplyFractionBB(&lengthBB, &heightBB);
     return areaBB; 
 }
+
+void isPlaindromeBB(PointBarryBalasingham* pPtr1BB, PointBarryBalasingham* pPtr2BB) {
+    FractionBarryBalasingham* smallestBB = nullptr;
+    FractionBarryBalasingham* largestBB = nullptr;
+
+    if (pPtr1BB->getXBB()->isPalindromeBB()) {
+        pPtr1BB->getXBB()->printBB();
+
+        if (smallestBB == nullptr) {
+            smallestBB = pPtr1BB->getXBB();
+        }
+        if (largestBB == nullptr) {
+            largestBB = pPtr1BB->getXBB();
+        }
+    }
+    if (pPtr1BB->getYBB()->isPalindromeBB()) {
+        pPtr1BB->getYBB()->printBB();
+
+        if (smallestBB == nullptr) {
+            smallestBB = pPtr1BB->getYBB();
+        } else if (!smallerFractionBB(smallestBB, pPtr1BB->getYBB())){
+            smallestBB = pPtr1BB->getYBB();
+        }
+
+        if (largestBB == nullptr) {
+            largestBB = pPtr1BB->getYBB();
+        } else if (!largerFractionBB(largestBB, pPtr1BB->getYBB())) {
+            largestBB = pPtr1BB->getYBB();
+        }
+    }
+    if (pPtr2BB->getXBB()->isPalindromeBB()) {
+        pPtr2BB->getXBB()->printBB();
+
+        if (smallestBB == nullptr) {
+            smallestBB = pPtr2BB->getXBB();
+        } else if (!smallerFractionBB(smallestBB, pPtr2BB->getXBB())){
+            smallestBB = pPtr2BB->getXBB();
+        }
+
+        if (largestBB == nullptr) {
+            largestBB = pPtr2BB->getXBB();
+        } else if (!largerFractionBB(largestBB, pPtr2BB->getXBB())) {
+            largestBB = pPtr2BB->getXBB();
+        }
+
+    }
+    if (pPtr2BB->getYBB()->isPalindromeBB()) {
+        pPtr2BB->getYBB()->printBB();
+
+        if (smallestBB == nullptr) {
+            smallestBB = pPtr2BB->getYBB();
+        } else if (!smallerFractionBB(smallestBB, pPtr2BB->getYBB())){
+            smallestBB = pPtr2BB->getYBB();
+        }
+
+        if (largestBB == nullptr) {
+            largestBB = pPtr2BB->getYBB();
+        } else if (!largerFractionBB(largestBB, pPtr2BB->getYBB())) {
+            largestBB = pPtr2BB->getYBB();
+        }
+    }
+
+    if (nullptr != largestBB) {
+        cout << "\nThe largest Palindrome Fraction:";
+        largestBB->printBB();
+    }
+
+    if (nullptr != smallestBB) {
+        cout << "\nThe smallest Palindrome Fraction:";
+        smallestBB->printBB();
+    }
+
+}

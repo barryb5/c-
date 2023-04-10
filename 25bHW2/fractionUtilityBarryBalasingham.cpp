@@ -50,3 +50,35 @@ FractionBarryBalasingham multiplyFractionBB(FractionBarryBalasingham* frPtr1BB, 
 
     return FractionBarryBalasingham(numBB, denomBB);
 }
+
+bool smallerFractionBB(FractionBarryBalasingham* frPtr1BB, FractionBarryBalasingham* frPtr2BB) {
+
+    bool pos1BB = isPositiveBB(frPtr1BB);
+    bool pos2BB = isPositiveBB(frPtr2BB);
+
+    bool smallerBB = false;
+    if ((pos1BB && pos2BB) || (!pos1BB && !pos2BB))
+        smallerBB = (frPtr1BB->getNumBB() * frPtr2BB->getDenomBB()) < (frPtr2BB->getNumBB() * frPtr1BB->getDenomBB());
+    else if (pos1BB && !pos2BB)
+        smallerBB = false;
+    else if (!pos1BB && pos2BB)
+        smallerBB = true;
+
+    return smallerBB;
+}
+
+bool largerFractionBB(FractionBarryBalasingham* frPtr1BB, FractionBarryBalasingham* frPtr2BB) {
+    bool pos1BB = isPositiveBB(frPtr1BB);
+    bool pos2BB = isPositiveBB(frPtr2BB);
+
+    bool largerBB = false;
+    if ((pos1BB && pos2BB) || (!pos1BB && !pos2BB))
+        largerBB = (frPtr1BB->getNumBB() * frPtr2BB->getDenomBB()) > (frPtr2BB->getNumBB() * frPtr1BB->getDenomBB());
+    else if (pos1BB && !pos2BB)
+        largerBB = true;
+    else if (!pos1BB && pos2BB)
+        largerBB = false;
+
+    return largerBB;
+}
+
