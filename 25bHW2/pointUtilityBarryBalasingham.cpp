@@ -126,11 +126,10 @@ void displayPointBB(PointBarryBalasingham* pPtrBB, int point) {
     cout << "\n    Displaying Point #" << point << "!"
         << "\n\n      Address: " << pPtrBB
         << "\n        For x-coordinate as Fraction:";
-        pPtrBB->getXBB()->printBB();
-        pPtrBB->getYBB()->printBB();
-
-    // cout << "\n" << pPtrRefBB->getXBB()->getNumBB() << "/"<< pPtrRefBB->getXBB()->getDenomBB();
-
+    pPtrBB->getXBB()->printBB();
+    cout << "\n        For y-coordinate as Fraction:";
+    pPtrBB->getYBB()->printBB();
+    cout << endl;
 }
 
 void alignmentBB(PointBarryBalasingham* pPtr1BB, PointBarryBalasingham* pPtr2BB) {
@@ -142,8 +141,9 @@ void alignmentBB(PointBarryBalasingham* pPtr1BB, PointBarryBalasingham* pPtr2BB)
     cout << "\n      Alighnment Confirmation:"
         <<"\n\n        Horizontal Alignment: "
         << fractionEqualBB(y1BB, y2BB)
-        <<"\n\n        Vertical Alignment: "
-        << fractionEqualBB(x1BB, x2BB);
+        <<"\n        Vertical Alignment: "
+        << fractionEqualBB(x1BB, x2BB)
+        << endl;
 }
 
 void quadrantBB(PointBarryBalasingham* pPtrRefBB) {
@@ -182,15 +182,22 @@ void midpointBB(PointBarryBalasingham* pPtr1BB, PointBarryBalasingham* pPtr2BB) 
     midpointBB = addFractionBB(y1BB, y2BB);
     midpointBB.setDenomBB(midpointBB.getDenomBB() * 2);
     midpointBB.printBB();
+    cout << endl;
 }
 
-FractionBarryBalasingham areaOfRectangleBB(PointBarryBalasingham* pPtr1BB, PointBarryBalasingham* pPtr2BB) {
+void areaOfRectangleBB(PointBarryBalasingham* pPtr1BB, PointBarryBalasingham* pPtr2BB) {
 
     FractionBarryBalasingham lengthBB = subtractFractionBB(pPtr1BB->getXBB(), pPtr2BB->getXBB()); 
     FractionBarryBalasingham heightBB = subtractFractionBB(pPtr1BB->getXBB(), pPtr2BB->getXBB()); 
 
     FractionBarryBalasingham areaBB = multiplyFractionBB(&lengthBB, &heightBB);
-    return areaBB; 
+    
+    cout << "\n      Area Confirmation:"
+        << "\n        Fraction Area:"
+        << "\n          Num: "
+        << areaBB.getNumBB()
+        << "\n          Denom: "
+        << areaBB.getDenomBB();
 }
 
 void isPlaindromeBB(PointBarryBalasingham* pPtr1BB, PointBarryBalasingham* pPtr2BB) {

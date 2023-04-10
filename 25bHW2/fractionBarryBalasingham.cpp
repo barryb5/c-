@@ -84,7 +84,7 @@ void FractionBarryBalasingham::printBB() const {
 
     cout << "\n          Address : " << this
         << "\n            num : " << num
-        << "\n            denom : " << denom << endl;
+        << "\n            denom : " << denom << flush;
 }
 
 int FractionBarryBalasingham::isPalindromeBB() const {

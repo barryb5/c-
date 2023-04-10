@@ -15,15 +15,15 @@ int main(int argc, char* argv[]) {
 
     // addFractionBB(&f0, &f1).printBB();
 
-    PointBarryBalasingham p0(-4, 1, -111, 1);
+    PointBarryBalasingham p0(50, 5, 4, -1);
     p0.getXBB()->printBB();
     p0.getYBB()->printBB();   
 
-    PointBarryBalasingham p1(6, 1, 373, 1);
-    p1.getXBB()->printBB();
-    p1.getYBB()->printBB();
+    // PointBarryBalasingham p1(5, -5, 12, 2);
+    // p1.getXBB()->printBB();
+    // p1.getYBB()->printBB();
 
-    isPlaindromeBB(&p0, &p1);
+    // isPlaindromeBB(&p0, &p1);
 
 
     // quadrantBB(&p0);

@@ -23,7 +23,7 @@ PointBarryBalasingham::PointBarryBalasingham() :
 PointBarryBalasingham::PointBarryBalasingham(int xNum, int xDenom, int yNum, int yDenom) : 
     xPtr { new FractionBarryBalasingham(xNum, xDenom) },
     yPtr { new FractionBarryBalasingham(yNum, yDenom) } {
-
+        
 }
 
 PointBarryBalasingham::PointBarryBalasingham(const FractionBarryBalasingham& x, const FractionBarryBalasingham& y) : 

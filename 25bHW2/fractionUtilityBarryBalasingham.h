@@ -19,7 +19,7 @@ using namespace std;
 
 // Required Functions
 
-int fractionEqualBB(FractionBarryBalasingham*, FractionBarryBalasingham*);
+string fractionEqualBB(FractionBarryBalasingham*, FractionBarryBalasingham*);
 bool isPositiveBB(FractionBarryBalasingham*);
 FractionBarryBalasingham addFractionBB(FractionBarryBalasingham*, FractionBarryBalasingham*);
 FractionBarryBalasingham subtractFractionBB(FractionBarryBalasingham*, FractionBarryBalasingham*);

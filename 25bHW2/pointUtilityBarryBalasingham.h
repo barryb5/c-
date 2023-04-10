@@ -8,8 +8,10 @@
 * Written By:   BarryBalasingham
 * Updated on:   2023/03/07
 */
+
 #ifndef POINTUTILITYBARRYBALASINGHAM_H
 #define POINTUTILITYBARRYBALASINGHAM_H
+
 // Header/Include Files
 #include <iostream>
 #include "pointBarryBalasingham.h"
@@ -24,5 +26,5 @@ void quadrantBB(PointBarryBalasingham*);
 void midpointBB(PointBarryBalasingham*, PointBarryBalasingham*);
 void isPlaindromeBB(PointBarryBalasingham*, PointBarryBalasingham*);
 
-FractionBarryBalasingham areaOfRectangleBB(PointBarryBalasingham*, PointBarryBalasingham*);
+void areaOfRectangleBB(PointBarryBalasingham*, PointBarryBalasingham*);
 #endif

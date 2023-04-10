@@ -15,11 +15,11 @@ using namespace std;
 
 // Function Definitions
 
-int fractionEqualBB(FractionBarryBalasingham* frPtr1BB, FractionBarryBalasingham* frPtr2BB) {
+string fractionEqualBB(FractionBarryBalasingham* frPtr1BB, FractionBarryBalasingham* frPtr2BB) {
     if (frPtr1BB->getNumBB() == frPtr2BB->getNumBB() && frPtr1BB->getDenomBB() == frPtr2BB->getDenomBB()) {
-        return 1;
+        return "Yes";
     }
-    return 0;
+    return "No";
 }
 
 bool isPositiveBB(FractionBarryBalasingham* frPtrRefBB) {

@@ -52,29 +52,46 @@ void runMenuBB() {
                 initSubMenuBB(pPtr1BB, pPtr2BB);
                 break;
             case 2:
-                if (pPtr1BB != nullptr || pPtr2BB != nullptr) {
+                if (nullptr == pPtr1BB || nullptr == pPtr2BB) {
                     cout << "\n    Inappropriate option as there are no Points!" << endl;
                 } else {
-                    createPointBB(pPtr1BB, pPtr2BB);
+                    pointOperatorsMenu(pPtr1BB, pPtr2BB);
                 }
-                pointOperatorsMenu(pPtr1BB, pPtr2BB);
                 break;
             case 3:
-                if (pPtr1BB != nullptr || pPtr2BB != nullptr) {
+                if (nullptr == pPtr1BB || nullptr == pPtr2BB) {
                     cout << "\n    Inappropriate option as there are no Points!" << endl;
                 } else {
-                    createPointBB(pPtr1BB, pPtr2BB);
+                    isPlaindromeBB(pPtr1BB, pPtr2BB);
                 }
-                isPlaindromeBB(pPtr1BB, pPtr2BB);
                 break;
             case 4:
-                displayPointMenuBB(pPtr1BB, pPtr2BB);
+                if (nullptr == pPtr1BB || nullptr == pPtr2BB) {
+                    cout << "\n    Inappropriate option as there are no Points!" << endl;
+                } else {
+                    displayPointMenuBB(pPtr1BB, pPtr2BB);
+                }
                 break;
             case 5:
-                cout << "\n  Clean Up!" << endl;
+                cout << "\n  Removing all dynamic allocations"
+                    << "\n\n    Removing Point #1 through delete --"
+                    << "\n\n      " << pPtr1BB
+                    << "\n        For x-coordinate as Fraction: ";
+                pPtr1BB->getXBB()->printBB();
+                cout << "\n        For y-coordinate as Fraction: ";
+                pPtr1BB->getYBB()->printBB();
+                
                 delete pPtr1BB;
-                delete pPtr2BB;
                 pPtr1BB = nullptr;
+
+                cout << "\n\n    Removing Point #2 through delete --"
+                    << "\n\n      " << pPtr1BB
+                    << "\n        For x-coordinate as Fraction: ";
+                pPtr2BB->getXBB()->printBB();
+                cout << "\n        For y-coordinate as Fraction: ";
+                pPtr2BB->getYBB()->printBB();
+
+                delete pPtr2BB;
                 pPtr2BB = nullptr;
                 cout << "\n  Have a nice session!" << endl;
                 break;
@@ -173,7 +190,7 @@ void pointOperatorsMenu(PointBarryBalasingham* pPtrRef1BB, PointBarryBalasingham
             "\n    * 2. Displaying Quadrant            *"
             "\n    * 3. Displaying midpoint            *"
             "\n    * 4. Displaying area of rectangle   *"
-            "\n    * 3. Returning                      *"
+            "\n    * 5. Returning                      *"
             "\n    *************************************"
             "\n  Enter an option: ";
         cin >> optionBB;
@@ -193,10 +210,14 @@ void pointOperatorsMenu(PointBarryBalasingham* pPtrRef1BB, PointBarryBalasingham
             midpointBB(pPtrRef1BB, pPtrRef2BB);
             break;
         case 4:
+            areaOfRectangleBB(pPtrRef1BB, pPtrRef2BB);
+            break;
+        case 5:
+            cout << "\n      Returning to previous menu!" << endl;
             break;
         default:
             break;
         }
-    } while (optionBB != 4);
+    } while (optionBB != 5);
 }
 // Your function definitions here
