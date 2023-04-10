@@ -1,9 +1,9 @@
 /**
-* Program Name: fractionFirstLast.cpp
+* Program Name: fractionBarryBalasingham.cpp
 * Discussion:   File #2 -- Implementation File
-*                 class FractionFirstLast;
+*                 class FractionBarryBalasingham;
 * Written By:   Barry Balasingham
-* Updated on:   2023/01/28
+* Updated on:   2023/04/08
 */
 
 // Header/Include Files

@@ -6,7 +6,7 @@
 *                   1. You are NOT ALLOWED to add any member
 *                      data to the class.
 * Written By:   Barry Balasingham
-* Updated on:   2023/03/07
+* Updated on:   2023/04/08
 */
 
 // Header/Include Files
@@ -22,7 +22,7 @@ void displayClassInfoBB() {
         << "\n  Assignment:               HW #2"
         << "\n  Implemented by:           Barry Balasingham"
         << "\n  Required Submission Date: 2023/03/25"
-        << "\n  Actual Submission Date: ____/__/__"
+        << "\n  Actual Submission Date: 2023/04/08"
         << "\n\nWe write code to manipulate data, which are"
         << "\nprovided by the user(s), to produce the"
         << "\nrequired outcome in the most efficient way!"

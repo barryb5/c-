@@ -1,14 +1,14 @@
 /**
-* Program Name: fractionFirstLast.h
+* Program Name: fractionBarryBalasingham.h
 * Discussion: File #1 -- Declaration/Specification file
-*               class FractionFirstLast;
+*               class FractionBarryBalasingham;
 *             Note!
 *                 1. You must provide all function definitions
 *                    for the member functions below.
 *                 2. You are NOT ALLOWED to add any member data
 *                    and member functions to the class.
 * Written By: Barry Balasingham
-* Updated on: 2022/01/15
+* Updated on: 2023/04/08
 */
 
 #ifndef FRACTIONBARRYBALASINGHAM_H

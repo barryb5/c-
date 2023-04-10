@@ -1,10 +1,10 @@
 /**
-* Program Name: fractionUtilityFirstLast.h
+* Program Name: fractionUtilityBarryBalasingham.h
 * Discussion:   File #3
 *                   Specification File or Header/Include File
 *                   Supportive Functions
 * Written By:   Barry Balasingham
-* Updated on:   2023/03/07
+* Updated on:   2023/04/08
 */
 
 #ifndef FRACTIONUTILITYBARRYBALASINGHAM_H

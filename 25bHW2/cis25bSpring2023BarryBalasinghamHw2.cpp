@@ -3,7 +3,7 @@
  * Discussion:   Application with Fraction 
  * Written By:   Barry Balasingham 
  * First Grader: Your Classmate Name 
- * Updated on:   2023/03/07 
+ * Updated on:   2023/04/08 
  */ 
  
 // Header/Include Files 
@@ -34,7 +34,7 @@ HomeworkInformation Information --
   Assignment:               HW #2
   Implemented by:           Barry Balasingham
   Required Submission Date: 2023/03/25
-  Actual Submission Date: ____/__/__
+  Actual Submission Date: 2023/04/08
 
 We write code to manipulate data, which are
 provided by the user(s), to produce the
