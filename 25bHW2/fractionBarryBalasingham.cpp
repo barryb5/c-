@@ -83,8 +83,8 @@ void FractionBarryBalasingham::printBB() const {
     // cout << "\n  While ::printBB() is running!" << endl;
 
     cout << "\n          Address : " << this
-        << "\n            num : " << num
-        << "\n            denom : " << denom << flush;
+        << "\n            Num : " << num
+        << "\n            Denom : " << denom << flush;
 }
 
 int FractionBarryBalasingham::isPalindromeBB() const {

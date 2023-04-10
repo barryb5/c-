@@ -123,7 +123,7 @@ void updatePointBB(PointBarryBalasingham*& pPtrRef1BB, PointBarryBalasingham*& p
 }
 
 void displayPointBB(PointBarryBalasingham* pPtrBB, int point) {
-    cout << "\n    Displaying Point #" << point << "!"
+    cout << "\n    Displaying Point #" << point << "-"
         << "\n\n      Address: " << pPtrBB
         << "\n        For x-coordinate as Fraction:";
     pPtrBB->getXBB()->printBB();
@@ -168,8 +168,8 @@ void quadrantBB(PointBarryBalasingham* pPtrRefBB) {
 void midpointBB(PointBarryBalasingham* pPtr1BB, PointBarryBalasingham* pPtr2BB) {
     FractionBarryBalasingham* y1BB = pPtr1BB->getYBB();
     FractionBarryBalasingham* y2BB = pPtr2BB->getYBB();
-    FractionBarryBalasingham* x1BB = pPtr1BB->getYBB();
-    FractionBarryBalasingham* x2BB = pPtr2BB->getYBB();
+    FractionBarryBalasingham* x1BB = pPtr1BB->getXBB();
+    FractionBarryBalasingham* x2BB = pPtr2BB->getXBB();
     cout << "\n      Midpoint Confirmation:"
         << "\n\n        Fraction From x-coordinate";
     
@@ -188,23 +188,36 @@ void midpointBB(PointBarryBalasingham* pPtr1BB, PointBarryBalasingham* pPtr2BB) 
 void areaOfRectangleBB(PointBarryBalasingham* pPtr1BB, PointBarryBalasingham* pPtr2BB) {
 
     FractionBarryBalasingham lengthBB = subtractFractionBB(pPtr1BB->getXBB(), pPtr2BB->getXBB()); 
-    FractionBarryBalasingham heightBB = subtractFractionBB(pPtr1BB->getXBB(), pPtr2BB->getXBB()); 
+    FractionBarryBalasingham heightBB = subtractFractionBB(pPtr1BB->getYBB(), pPtr2BB->getYBB()); 
 
     FractionBarryBalasingham areaBB = multiplyFractionBB(&lengthBB, &heightBB);
     
+    if (areaBB.getNumBB() < 0) {
+        areaBB.setNumBB(areaBB.getNumBB() * -1);
+    }
+
+    if (areaBB.getDenomBB() < 0) {
+        areaBB.setDenomBB(areaBB.getDenomBB() * -1);
+    }
+
     cout << "\n      Area Confirmation:"
         << "\n        Fraction Area:"
         << "\n          Num: "
         << areaBB.getNumBB()
         << "\n          Denom: "
-        << areaBB.getDenomBB();
+        << areaBB.getDenomBB()
+        << endl;
 }
 
 void isPlaindromeBB(PointBarryBalasingham* pPtr1BB, PointBarryBalasingham* pPtr2BB) {
     FractionBarryBalasingham* smallestBB = nullptr;
     FractionBarryBalasingham* largestBB = nullptr;
 
+    cout << "\n\n  Displaying all Palindrome Fraction(s)-"
+        << "\n\n    From Point #1:";
+
     if (pPtr1BB->getXBB()->isPalindromeBB()) {
+        cout << "\n      Fraction from x-coordinate";
         pPtr1BB->getXBB()->printBB();
 
         if (smallestBB == nullptr) {
@@ -214,7 +227,9 @@ void isPlaindromeBB(PointBarryBalasingham* pPtr1BB, PointBarryBalasingham* pPtr2
             largestBB = pPtr1BB->getXBB();
         }
     }
+    cout << endl;
     if (pPtr1BB->getYBB()->isPalindromeBB()) {
+        cout << "\n      Fraction from y-coordinate";
         pPtr1BB->getYBB()->printBB();
 
         if (smallestBB == nullptr) {
@@ -229,7 +244,10 @@ void isPlaindromeBB(PointBarryBalasingham* pPtr1BB, PointBarryBalasingham* pPtr2
             largestBB = pPtr1BB->getYBB();
         }
     }
+
+    cout << "\n\n    From Point #2:";
     if (pPtr2BB->getXBB()->isPalindromeBB()) {
+        cout << "\n      Fraction from x-coordinate";
         pPtr2BB->getXBB()->printBB();
 
         if (smallestBB == nullptr) {
@@ -245,7 +263,9 @@ void isPlaindromeBB(PointBarryBalasingham* pPtr1BB, PointBarryBalasingham* pPtr2
         }
 
     }
+    cout << endl;
     if (pPtr2BB->getYBB()->isPalindromeBB()) {
+        cout << "\n      Fraction from y-coordinate";
         pPtr2BB->getYBB()->printBB();
 
         if (smallestBB == nullptr) {
@@ -262,13 +282,13 @@ void isPlaindromeBB(PointBarryBalasingham* pPtr1BB, PointBarryBalasingham* pPtr2
     }
 
     if (nullptr != largestBB) {
-        cout << "\nThe largest Palindrome Fraction:";
+        cout << "\n\n    The largest Palindrome Fraction:";
         largestBB->printBB();
     }
 
     if (nullptr != smallestBB) {
-        cout << "\nThe smallest Palindrome Fraction:";
+        cout << "\n\n    The smallest Palindrome Fraction:";
         smallestBB->printBB();
     }
-
+    cout << endl;
 }

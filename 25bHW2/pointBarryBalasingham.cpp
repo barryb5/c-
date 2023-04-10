@@ -17,7 +17,6 @@ using namespace std;
 PointBarryBalasingham::PointBarryBalasingham() : 
     xPtr { new FractionBarryBalasingham() }, 
     yPtr { new FractionBarryBalasingham() } {
-    // cout << "\n  Calling PointBarryBalasingham()!" << endl;
 }
 
 PointBarryBalasingham::PointBarryBalasingham(int xNum, int xDenom, int yNum, int yDenom) : 
@@ -29,13 +28,11 @@ PointBarryBalasingham::PointBarryBalasingham(int xNum, int xDenom, int yNum, int
 PointBarryBalasingham::PointBarryBalasingham(const FractionBarryBalasingham& x, const FractionBarryBalasingham& y) : 
     xPtr { new FractionBarryBalasingham(x) },
     yPtr { new FractionBarryBalasingham(y) } {
-    // cout << "\n  Calling PointBarryBalasingham()!" << endl;
 }
 
 PointBarryBalasingham::PointBarryBalasingham(const PointBarryBalasingham& point) : 
     xPtr { new FractionBarryBalasingham(*point.xPtr) },
     yPtr { new FractionBarryBalasingham(*point.yPtr) } {
-    // cout << "\n  Calling PointBarryBalasingham()!" << endl;
 }
 
 PointBarryBalasingham::~PointBarryBalasingham() {
@@ -44,8 +41,6 @@ PointBarryBalasingham::~PointBarryBalasingham() {
 
     xPtr = nullptr;
     yPtr = nullptr;
-
-    cout << "\n  Calling ~PointBarryBalasingham()!" << endl;
 }
 
 FractionBarryBalasingham* PointBarryBalasingham::getXBB() {
