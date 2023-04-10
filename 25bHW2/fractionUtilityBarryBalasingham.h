@@ -19,8 +19,6 @@ using namespace std;
 
 // Required Functions
 
-void createFractionBB(FractionBarryBalasingham*&);
-void updateFractionBB(FractionBarryBalasingham*&);
 int fractionEqualBB(FractionBarryBalasingham*, FractionBarryBalasingham*);
 bool isPositiveBB(FractionBarryBalasingham*);
 FractionBarryBalasingham addFractionBB(FractionBarryBalasingham*, FractionBarryBalasingham*);

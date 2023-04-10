@@ -15,46 +15,6 @@ using namespace std;
 
 // Function Definitions
 
-void createFractionBB(FractionBarryBalasingham*& frPtrRefBB) {
-    int numBB;
-    int denomBB;
-
-    cout << "\n      While createFractionBB() is running!"
-        << endl;
-
-    cout << "\n      Enter an int for num: ";
-    cin >> numBB;
-
-    do {
-        cout << "\n      Enter a non-zero int for denom: ";
-        cin >> denomBB;
-    } while (!denomBB);
-
-    frPtrRefBB = new FractionBarryBalasingham{ numBB, denomBB };
-}
-
-void updateFractionBB(FractionBarryBalasingham*& frPtrRefBB) {
-    int numBB;
-    int denomBB;
-
-    cout << "\n      While createFractionBB() is running!"
-        << endl;
-
-    cout << "\n      The information of the current Fraction -"
-        << endl;
-    frPtrRefBB->printBB();
-
-    cout << "\n      Enter an int for num: ";
-        cin >> numBB;
-
-    do {
-        cout << "\n      Enter a non-zero int for denom: ";
-        cin >> denomBB;
-    } while (!denomBB);
-
-    frPtrRefBB->updateBB(numBB, denomBB);
-}
-
 int fractionEqualBB(FractionBarryBalasingham* frPtr1BB, FractionBarryBalasingham* frPtr2BB) {
     if (frPtr1BB->getNumBB() == frPtr2BB->getNumBB() && frPtr1BB->getDenomBB() == frPtr2BB->getDenomBB()) {
         return 1;
